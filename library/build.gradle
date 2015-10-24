@@ -30,9 +30,9 @@ ext {
     PUBLISH_DES = 'Nice loading animations for Android'
     LIB_NAME = 'AVLoadingIndicatorView'
 
-    WEBSITE_URL = '库的网站链接'  // 可以填写github上的库地址.
-    ISSUE_TRACKER_URL = '库的issue链接' // 可以填写github库的issue地址.
-    VSC_URL = '库的版本控制地址'    // 可以填写github上库的地址.
+    WEBSITE_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
+    ISSUE_TRACKER_URL = 'https://github.com/81813780/AVLoadingIndicatorView/issues'
+    VSC_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
 }
 
 apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
