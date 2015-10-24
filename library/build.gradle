@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.wang.avi'
+    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_DES = 'Nice loading animations for Android'
+    LIB_NAME = 'AVLoadingIndicatorView'
+
+    WEBSITE_URL = '库的网站链接'  // 可以填写github上的库地址.
+    ISSUE_TRACKER_URL = '库的issue链接' // 可以填写github库的issue地址.
+    VSC_URL = '库的版本控制地址'    // 可以填写github上库的地址.
+}
+
+apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
