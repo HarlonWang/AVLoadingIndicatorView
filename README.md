@@ -9,6 +9,8 @@ You can also find IOS version of this [here](https://github.com/ninjaprox/NVActi
 ## Demo
 ![](https://github.com/81813780/AVLoadingIndicatorView/blob/master/Demo2.gif)
 
+[Download Apk](https://github.com/81813780/AVLoadingIndicatorView/releases/download/getSampleApk/app-debug.apk)
+
 ## Usage
 
 ### Step 1
