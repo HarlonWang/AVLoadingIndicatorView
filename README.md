@@ -73,6 +73,7 @@ Here they are
 ## Thanks
 - [nineoldandroids](https://github.com/JakeWharton/NineOldAndroids)
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
+- [Connor Atherton](https://github.com/ConnorAtherton)
 
 ##Contact me
 
