@@ -19,10 +19,10 @@ You can also find IOS version of this [here](https://github.com/ninjaprox/NVActi
 
 Add dependencies in build.gradle.
 ```groovy
-	dependencies {
-	   compile 'com.wang.avi:library:1.0.0'
-	   compile 'com.nineoldandroids:library:2.4.0'
-	}
+    dependencies {
+       compile 'com.wang.avi:library:1.0.0'
+       compile 'com.nineoldandroids:library:2.4.0'
+    }
 ```
 
 ### Step 2
@@ -39,32 +39,45 @@ Add the AVLoadingIndicatorView to your layout:
 
 ## Indicators
 
-Here they are
+In the order seen above in the demo, here they are:
 
+**Row 1**
  * `BallPulse`
  * `BallGridPulse`
  * `BallClipRotate`
  * `BallClipRotatePulse`
+
+**Row 2**
  * `SquareSpin`
  * `BallClipRotateMultiple`
  * `BallPulseRise`
  * `BallRotate`
+
+**Row 3**
  * `CubeTransition`
  * `BallZigZag`
  * `BallZigZagDeflect`
  * `BallTrianglePath`
+
+**Row 4**
  * `BallScale`
  * `LineScale`
  * `LineScaleParty`
  * `BallScaleMultiple`
+
+**Row 5**
  * `BallPulseSync`
  * `BallBeat`
  * `LineScalePulseOut`
  * `LineScalePulseOutRapid`
+
+**Row 6**
  * `BallScaleRipple`
  * `BallScaleRippleMultiple`
  * `BallSpinFadeLoader`
  * `LineSpinFadeLoader`
+
+**Row 7**
  * `TriangleSkewSpin`
  * `Pacman`
  * `BallGridBeat`
