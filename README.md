@@ -39,7 +39,7 @@ Add the AVLoadingIndicatorView to your layout:
 
 ## Indicators
 
-In the order seen above in the demo, here they are:
+As seen above in the **Demo**, the indicators are as follows:
 
 **Row 1**
  * `BallPulse`
