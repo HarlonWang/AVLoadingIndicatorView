@@ -40,7 +40,7 @@ Add the AVLoadingIndicatorView to your layout:
 
 ### Step 3
 
-It's very simple just like Progressbar.
+It's very simple use just like Progressbar.
 ```java
    void startAnim(){
         findViewById(R.id.avloadingIndicatorView).setVisible(View.Visible);
