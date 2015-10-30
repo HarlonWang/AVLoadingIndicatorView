@@ -38,6 +38,20 @@ Add the AVLoadingIndicatorView to your layout:
         />
 ```
 
+### Step 3
+
+It's very simple just like Progressbar.
+```java
+   void startAnim(){
+        findViewById(R.id.avloadingIndicatorView).setVisible(View.Visible);
+   }
+   
+   void stopAnim(){
+        findViewById(R.id.avloadingIndicatorView).setVisible(View.Gone);
+   }
+   
+```
+
 ## Indicators
 
 As seen above in the **Demo**, the indicators are as follows:
