@@ -38,16 +38,6 @@ public class LineScaleIndicator extends BaseIndicatorController {
         long[] delays=new long[]{100,200,300,400,500};
         for (int i = 0; i < 5; i++) {
             final int index=i;
-
-            /*Keyframe k1=Keyframe.ofFloat(0,1);
-            k1.setInterpolator(new CubicBezierInterpolator(0.2, 0.68,0.18, 1.08));
-            Keyframe k2=Keyframe.ofFloat(0.5f,0.4f);
-            k2.setInterpolator(new CubicBezierInterpolator(0.2, 0.68,0.18, 1.08));
-            Keyframe k3=Keyframe.ofFloat(1,1);
-            PropertyValuesHolder holder=PropertyValuesHolder.ofKeyframe("scale", k1, k2, k3);
-            ValueAnimator scaleAnim=ValueAnimator.ofPropertyValuesHolder(holder);
-            scaleAnim.setInterpolator(new CubicBezierInterpolator(0.2, 0.68,0.18, 1.08));*/
-
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1, 0.4f, 1);
             scaleAnim.setDuration(1000);
             scaleAnim.setRepeatCount(-1);

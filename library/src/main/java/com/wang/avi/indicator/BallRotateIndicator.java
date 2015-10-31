@@ -2,9 +2,6 @@ package com.wang.avi.indicator;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.OvershootInterpolator;
-
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
 

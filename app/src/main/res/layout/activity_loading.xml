@@ -56,6 +56,11 @@
                     android:gravity="center"
                     android:layout_height="wrap_content">
 
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicator="BallGridPulse"
+                        />
                 </LinearLayout>
 
 
