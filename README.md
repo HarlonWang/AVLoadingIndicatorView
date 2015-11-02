@@ -30,6 +30,7 @@ Add dependencies in build.gradle.
 Add the AVLoadingIndicatorView to your layout:
 ```java
     <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avloadingIndicatorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"  //visible or gone
@@ -43,11 +44,11 @@ Add the AVLoadingIndicatorView to your layout:
 It's very simple use just like Progressbar.
 ```java
    void startAnim(){
-        findViewById(R.id.avloadingIndicatorView).setVisible(View.Visible);
+        findViewById(R.id.avloadingIndicatorView).setVisibility(View.VISIBLE);
    }
    
    void stopAnim(){
-        findViewById(R.id.avloadingIndicatorView).setVisible(View.Gone);
+        findViewById(R.id.avloadingIndicatorView).setVisibility(View.GONE);
    }
    
 ```
@@ -105,7 +106,7 @@ As seen above in the **Demo**, the indicators are as follows:
 
 ##Contact me
 
- if you have a better idea or way on this project, please let me know, thanks:)
+ If you have a better idea or way on this project, please let me know, thanks :)
 
 [Email](mailto:81813780@qq.com)
 
