@@ -19,8 +19,6 @@ public class SquareSpinIndicator extends BaseIndicatorController {
 
     @Override
     public void createAnimation() {
-        
-
         PropertyValuesHolder rotation5=PropertyValuesHolder.ofFloat("rotationX",0,180,180,0,0);
         PropertyValuesHolder rotation6=PropertyValuesHolder.ofFloat("rotationY",0,0,180,180,0);
         ObjectAnimator animator=ObjectAnimator.ofPropertyValuesHolder(getTarget(), rotation6,rotation5);
