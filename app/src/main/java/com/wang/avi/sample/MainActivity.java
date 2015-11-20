@@ -11,19 +11,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.test);
+        setContentView(R.layout.activity_loading);
     }
 
-
-    public void visible(View view) {
-        findViewById(R.id.testView).setVisibility(View.VISIBLE);
-    }
-
-    public void gone(View view) {
-        findViewById(R.id.testView).setVisibility(View.GONE);
-    }
-
-    public void invisible(View view) {
-        findViewById(R.id.testView).setVisibility(View.INVISIBLE);
-    }
 }
