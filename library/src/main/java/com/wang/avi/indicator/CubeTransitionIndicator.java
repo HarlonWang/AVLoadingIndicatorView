@@ -5,7 +5,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/18.
@@ -31,7 +35,8 @@ public class CubeTransitionIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         float startX=getWidth()/5;
         float startY=getHeight()/5;
         for (int i = 0; i < 2; i++) {
@@ -69,7 +74,8 @@ public class CubeTransitionIndicator extends BaseIndicatorController {
             });
             translationYAnim.start();
 
-            addAnimation(translationXAnim,translationYAnim);
+            animators.add(translationXAnim);
+            animators.add(translationYAnim);
         }
 
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.5f,1,0.5f,1);
@@ -98,6 +104,8 @@ public class CubeTransitionIndicator extends BaseIndicatorController {
         });
         rotateAnim.start();
 
-        addAnimation(scaleAnim,rotateAnim);
+        animators.add(scaleAnim);
+        animators.add(rotateAnim);
+        return animators;
     }
 }

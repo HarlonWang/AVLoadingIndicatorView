@@ -2,8 +2,13 @@ package com.wang.avi.indicator;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/17.
@@ -39,7 +44,8 @@ public class BallRotateIndicator extends BaseIndicatorController{
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(0.5f,1,0.5f);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
@@ -57,7 +63,9 @@ public class BallRotateIndicator extends BaseIndicatorController{
         rotateAnim.setRepeatCount(-1);
         rotateAnim.start();
 
-        addAnimation(scaleAnim,rotateAnim);
+        animators.add(scaleAnim);
+        animators.add(rotateAnim);
+        return animators;
     }
 
 

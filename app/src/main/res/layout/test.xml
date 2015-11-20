@@ -9,7 +9,7 @@
     <com.wang.avi.AVLoadingIndicatorView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:indicator="BallPulse"
+        app:indicator="BallGridBeat"
         android:id="@+id/testView"
         />
 

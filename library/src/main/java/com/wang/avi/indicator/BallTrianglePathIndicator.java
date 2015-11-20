@@ -4,7 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.animation.LinearInterpolator;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/19.
@@ -26,7 +30,8 @@ public class BallTrianglePathIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         float startX=getWidth()/5;
         float startY=getWidth()/5;
         for (int i = 0; i < 3; i++) {
@@ -68,8 +73,10 @@ public class BallTrianglePathIndicator extends BaseIndicatorController {
             });
             translateYAnim.start();
 
-            addAnimation(translateXAnim,translateYAnim);
+            animators.add(translateXAnim);
+            animators.add(translateYAnim);
         }
+        return animators;
     }
 
 

@@ -4,7 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.animation.LinearInterpolator;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/19.
@@ -20,7 +24,8 @@ public class BallScaleRippleIndicator extends BallScaleIndicator {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(0,1);
         scaleAnim.setInterpolator(new LinearInterpolator());
         scaleAnim.setDuration(1000);
@@ -47,7 +52,9 @@ public class BallScaleRippleIndicator extends BallScaleIndicator {
         });
         alphaAnim.start();
 
-        addAnimation(scaleAnim,alphaAnim);
+        animators.add(scaleAnim);
+        animators.add(alphaAnim);
+        return animators;
     }
 
 }

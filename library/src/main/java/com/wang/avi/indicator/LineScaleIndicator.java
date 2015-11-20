@@ -4,7 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/19.
@@ -34,7 +38,8 @@ public class LineScaleIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         long[] delays=new long[]{100,200,300,400,500};
         for (int i = 0; i < 5; i++) {
             final int index=i;
@@ -50,8 +55,9 @@ public class LineScaleIndicator extends BaseIndicatorController {
                 }
             });
             scaleAnim.start();
-            addAnimation(scaleAnim);
+            animators.add(scaleAnim);
         }
+        return animators;
     }
 
 }

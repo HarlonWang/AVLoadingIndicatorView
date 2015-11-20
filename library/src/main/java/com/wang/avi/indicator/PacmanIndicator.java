@@ -5,7 +5,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/16.
@@ -55,7 +59,8 @@ public class PacmanIndicator extends BaseIndicatorController{
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         float startT=getWidth()/11;
         ValueAnimator translationAnim=ValueAnimator.ofFloat(getWidth()-startT,getWidth()/2);
         translationAnim.setDuration(650);
@@ -106,6 +111,10 @@ public class PacmanIndicator extends BaseIndicatorController{
         });
         rotateAnim2.start();
 
-        addAnimation(translationAnim,alphaAnim,rotateAnim1,rotateAnim2);
+        animators.add(translationAnim);
+        animators.add(alphaAnim);
+        animators.add(rotateAnim1);
+        animators.add(rotateAnim2);
+        return animators;
     }
 }

@@ -11,11 +11,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loading);
+        setContentView(R.layout.test);
     }
 
 
-/*    public void visible(View view) {
+    public void visible(View view) {
         findViewById(R.id.testView).setVisibility(View.VISIBLE);
     }
 
@@ -25,5 +25,5 @@ public class MainActivity extends AppCompatActivity {
 
     public void invisible(View view) {
         findViewById(R.id.testView).setVisibility(View.INVISIBLE);
-    }*/
+    }
 }

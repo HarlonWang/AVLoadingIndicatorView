@@ -339,7 +339,7 @@ public class AVLoadingIndicatorView extends View{
     }
 
     void applyAnimation(){
-        mIndicatorController.createAnimation();
+        mIndicatorController.initAnimation();
     }
 
     private int dp2px(int dpValue) {

@@ -5,8 +5,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.animation.LinearInterpolator;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.PropertyValuesHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/20.
@@ -24,7 +28,8 @@ public class TriangleSkewSpinIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         PropertyValuesHolder rotation5=PropertyValuesHolder.ofFloat("rotationX",0,180,180,0,0);
         PropertyValuesHolder rotation6=PropertyValuesHolder.ofFloat("rotationY",0,0,180,180,0);
         
@@ -34,7 +39,8 @@ public class TriangleSkewSpinIndicator extends BaseIndicatorController {
         animator.setDuration(2500);
         animator.start();
 
-        addAnimation(animator);
+        animators.add(animator);
+        return animators;
     }
 
 }

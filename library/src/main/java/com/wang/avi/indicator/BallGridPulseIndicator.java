@@ -3,7 +3,11 @@ package com.wang.avi.indicator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/16.
@@ -58,7 +62,8 @@ public class BallGridPulseIndicator extends BaseIndicatorController{
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         int[] durations={720, 1020, 1280, 1420, 1450, 1180, 870, 1450, 1060};
         int[] delays= {-60, 250, -170, 480, 310, 30, 460, 780, 450};
 
@@ -89,8 +94,10 @@ public class BallGridPulseIndicator extends BaseIndicatorController{
                 }
             });
             alphaAnim.start();
-            addAnimation(scaleAnim,alphaAnim);
+            animators.add(scaleAnim);
+            animators.add(alphaAnim);
         }
+        return animators;
     }
 
 

@@ -3,7 +3,11 @@ package com.wang.avi.indicator;
 
 import android.view.animation.LinearInterpolator;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/19.
@@ -14,7 +18,8 @@ public class BallZigZagDeflectIndicator extends BallZigZagIndicator {
 
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         float startX=getWidth()/6;
         float startY=getWidth()/6;
         for (int i = 0; i < 2; i++) {
@@ -52,8 +57,10 @@ public class BallZigZagDeflectIndicator extends BallZigZagIndicator {
             });
             translateYAnim.start();
 
-            addAnimation(translateXAnim,translateYAnim);
+            animators.add(translateXAnim);
+            animators.add(translateYAnim);
         }
+        return animators;
     }
 
 }

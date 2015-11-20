@@ -3,7 +3,11 @@ package com.wang.avi.indicator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/20.
@@ -63,7 +67,8 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         int[] delays= {0, 120, 240, 360, 480, 600, 720, 780, 840};
         for (int i = 0; i < 8; i++) {
             final int index=i;
@@ -92,8 +97,10 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
                 }
             });
             alphaAnim.start();
-            addAnimation(scaleAnim,alphaAnim);
+            animators.add(scaleAnim);
+            animators.add(alphaAnim);
         }
+        return animators;
     }
 
     final class Point{

@@ -43,8 +43,7 @@ public abstract class BaseIndicatorController {
     }
 
     /**
-     * draw indicator what ever
-     * you want to draw
+     * draw indicator
      * @param canvas
      * @param paint
      */
@@ -52,26 +51,12 @@ public abstract class BaseIndicatorController {
 
     /**
      * create animation or animations
-     * ,and add to your indicator.
      */
-    public abstract void createAnimation();
+    public abstract List<Animator> createAnimation();
 
-    /**
-     * should be called when you create animation.
-     * To make animation release better.
-     * @see #setAnimationStatus(AnimStatus)
-     * @param animator
-     */
-    public void addAnimation(Animator... animator){
-        if (mAnimators==null){
-            mAnimators=new ArrayList<>();
-        }
-        int length=animator.length;
-        for (int i = 0; i < length; i++) {
-            mAnimators.add(animator[i]);
-        }
+    public void initAnimation(){
+        mAnimators=createAnimation();
     }
-
 
     /**
      * make animation to start or end when target
@@ -84,23 +69,26 @@ public abstract class BaseIndicatorController {
         if (mAnimators==null){
             return;
         }
-        Log.d("AnimStatus","setAnimationStatus");
         int count=mAnimators.size();
         for (int i = 0; i < count; i++) {
             Animator animator=mAnimators.get(i);
+            boolean isRunning=animator.isRunning();
             switch (animStatus){
                 case START:
-                    if (!animator.isRunning()){
+                    if (!isRunning){
+                        Log.d("AnimStatus","START");
                         animator.start();
                     }
                     break;
                 case END:
-                    if (animator.isRunning()){
+                    if (isRunning){
+                        Log.d("AnimStatus","END");
                         animator.end();
                     }
                     break;
                 case CANCEL:
-                    if (animator.isRunning()){
+                    if (isRunning){
+                        Log.d("AnimStatus","CANCEL");
                         animator.cancel();
                     }
                     break;

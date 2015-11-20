@@ -3,7 +3,11 @@ package com.wang.avi.indicator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/19.
@@ -40,7 +44,8 @@ public class BallBeatIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         int[] delays=new int[]{350,0,350};
         for (int i = 0; i < 3; i++) {
             final int index=i;
@@ -52,7 +57,6 @@ public class BallBeatIndicator extends BaseIndicatorController {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     scaleFloats[index] = (float) animation.getAnimatedValue();
-                    System.out.println("scaleFloats="+scaleFloats[index]);
                     postInvalidate();
                 }
             });
@@ -70,8 +74,10 @@ public class BallBeatIndicator extends BaseIndicatorController {
                 }
             });
             alphaAnim.start();
-            addAnimation(scaleAnim, alphaAnim);
+            animators.add(scaleAnim);
+            animators.add(alphaAnim);
         }
+        return animators;
     }
 
 }

@@ -4,7 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/17.
@@ -49,7 +53,8 @@ public class BallClipRotateMultipleIndicator extends BaseIndicatorController{
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.6f,1);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
@@ -73,7 +78,9 @@ public class BallClipRotateMultipleIndicator extends BaseIndicatorController{
             }
         });
         rotateAnim.start();
-        addAnimation(scaleAnim,rotateAnim);
+        animators.add(scaleAnim);
+        animators.add(rotateAnim);
+        return animators;
     }
 
 }

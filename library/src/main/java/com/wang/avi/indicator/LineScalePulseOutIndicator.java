@@ -2,7 +2,11 @@ package com.wang.avi.indicator;
 
 
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/19.
@@ -10,7 +14,8 @@ import com.nineoldandroids.animation.ValueAnimator;
 public class LineScalePulseOutIndicator extends LineScaleIndicator {
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
+        List<Animator> animators=new ArrayList<>();
         long[] delays=new long[]{500,250,0,250,500};
         for (int i = 0; i < 5; i++) {
             final int index=i;
@@ -26,8 +31,9 @@ public class LineScalePulseOutIndicator extends LineScaleIndicator {
                 }
             });
             scaleAnim.start();
-            addAnimation(scaleAnim);
+            animators.add(scaleAnim);
         }
+        return animators;
     }
 
 }

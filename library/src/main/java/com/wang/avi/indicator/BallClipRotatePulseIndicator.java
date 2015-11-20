@@ -4,7 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
+import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ValueAnimator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/16.
@@ -45,7 +49,7 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
     }
 
     @Override
-    public void createAnimation() {
+    public List<Animator> createAnimation() {
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.3f,1);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
@@ -81,7 +85,11 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
             }
         });
         rotateAnim.start();
-        addAnimation(scaleAnim,scaleAnim2,rotateAnim);
+        List<Animator> animators=new ArrayList<>();
+        animators.add(scaleAnim);
+        animators.add(scaleAnim2);
+        animators.add(rotateAnim);
+        return animators;
     }
 
 }
