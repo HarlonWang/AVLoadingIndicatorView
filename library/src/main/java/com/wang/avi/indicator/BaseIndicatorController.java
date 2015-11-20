@@ -76,19 +76,16 @@ public abstract class BaseIndicatorController {
             switch (animStatus){
                 case START:
                     if (!isRunning){
-                        Log.d("AnimStatus","START");
                         animator.start();
                     }
                     break;
                 case END:
                     if (isRunning){
-                        Log.d("AnimStatus","END");
                         animator.end();
                     }
                     break;
                 case CANCEL:
                     if (isRunning){
-                        Log.d("AnimStatus","CANCEL");
                         animator.cancel();
                     }
                     break;
