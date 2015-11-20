@@ -67,6 +67,8 @@ public class BallTrianglePathIndicator extends BaseIndicatorController {
                 }
             });
             translateYAnim.start();
+
+            addAnimation(translateXAnim,translateYAnim);
         }
     }
 

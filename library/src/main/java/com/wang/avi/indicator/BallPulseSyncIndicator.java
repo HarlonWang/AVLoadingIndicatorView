@@ -45,6 +45,7 @@ public class BallPulseSyncIndicator extends BaseIndicatorController {
                 }
             });
             scaleAnim.start();
+            addAnimation(scaleAnim);
         }
     }
 

@@ -52,6 +52,7 @@ public class BallBeatIndicator extends BaseIndicatorController {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     scaleFloats[index] = (float) animation.getAnimatedValue();
+                    System.out.println("scaleFloats="+scaleFloats[index]);
                     postInvalidate();
                 }
             });
@@ -69,6 +70,7 @@ public class BallBeatIndicator extends BaseIndicatorController {
                 }
             });
             alphaAnim.start();
+            addAnimation(scaleAnim, alphaAnim);
         }
     }
 

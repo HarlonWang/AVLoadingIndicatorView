@@ -24,6 +24,7 @@ public class SemiCircleSpinIndicator extends BaseIndicatorController {
         rotateAnim.setDuration(600);
         rotateAnim.setRepeatCount(-1);
         rotateAnim.start();
+        addAnimation(rotateAnim);
     }
 
 

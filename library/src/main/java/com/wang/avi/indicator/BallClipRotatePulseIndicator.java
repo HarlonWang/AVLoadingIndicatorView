@@ -81,6 +81,7 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
             }
         });
         rotateAnim.start();
+        addAnimation(scaleAnim,scaleAnim2,rotateAnim);
     }
 
 }

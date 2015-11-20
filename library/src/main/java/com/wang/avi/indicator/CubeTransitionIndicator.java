@@ -68,6 +68,8 @@ public class CubeTransitionIndicator extends BaseIndicatorController {
                 }
             });
             translationYAnim.start();
+
+            addAnimation(translationXAnim,translationYAnim);
         }
 
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.5f,1,0.5f,1);
@@ -95,5 +97,7 @@ public class CubeTransitionIndicator extends BaseIndicatorController {
             }
         });
         rotateAnim.start();
+
+        addAnimation(scaleAnim,rotateAnim);
     }
 }

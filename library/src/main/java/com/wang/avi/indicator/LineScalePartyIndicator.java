@@ -51,6 +51,7 @@ public class LineScalePartyIndicator extends BaseIndicatorController {
                 }
             });
             scaleAnim.start();
+            addAnimation(scaleAnim);
         }
     }
 

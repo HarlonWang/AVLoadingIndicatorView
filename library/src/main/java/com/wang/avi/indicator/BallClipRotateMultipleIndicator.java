@@ -73,6 +73,7 @@ public class BallClipRotateMultipleIndicator extends BaseIndicatorController{
             }
         });
         rotateAnim.start();
+        addAnimation(scaleAnim,rotateAnim);
     }
 
 }

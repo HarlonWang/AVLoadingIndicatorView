@@ -51,6 +51,8 @@ public class BallZigZagDeflectIndicator extends BallZigZagIndicator {
                 }
             });
             translateYAnim.start();
+
+            addAnimation(translateXAnim,translateYAnim);
         }
     }
 

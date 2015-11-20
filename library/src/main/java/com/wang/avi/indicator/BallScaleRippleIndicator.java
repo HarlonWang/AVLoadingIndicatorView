@@ -46,6 +46,8 @@ public class BallScaleRippleIndicator extends BallScaleIndicator {
             }
         });
         alphaAnim.start();
+
+        addAnimation(scaleAnim,alphaAnim);
     }
 
 }

@@ -57,6 +57,7 @@ public class BallRotateIndicator extends BaseIndicatorController{
         rotateAnim.setRepeatCount(-1);
         rotateAnim.start();
 
+        addAnimation(scaleAnim,rotateAnim);
     }
 
 

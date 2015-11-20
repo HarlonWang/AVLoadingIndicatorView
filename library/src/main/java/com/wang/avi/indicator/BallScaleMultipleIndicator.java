@@ -56,6 +56,8 @@ public class BallScaleMultipleIndicator extends BaseIndicatorController {
             });
             scaleAnim.setStartDelay(delays[i]);
             alphaAnim.start();
+
+            addAnimation(scaleAnim,alphaAnim);
         }
     }
 

@@ -25,6 +25,7 @@ public class LineScalePulseOutRapidIndicator extends LineScaleIndicator {
                 }
             });
             scaleAnim.start();
+            addAnimation(scaleAnim);
         }
     }
 

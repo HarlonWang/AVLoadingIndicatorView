@@ -105,5 +105,7 @@ public class PacmanIndicator extends BaseIndicatorController{
             }
         });
         rotateAnim2.start();
+
+        addAnimation(translationAnim,alphaAnim,rotateAnim1,rotateAnim2);
     }
 }

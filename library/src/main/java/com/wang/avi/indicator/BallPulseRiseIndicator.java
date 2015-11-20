@@ -31,5 +31,6 @@ public class BallPulseRiseIndicator extends BaseIndicatorController{
         animator.setRepeatCount(-1);
         animator.setDuration(1500);
         animator.start();
+        addAnimation(animator);
     }
 }

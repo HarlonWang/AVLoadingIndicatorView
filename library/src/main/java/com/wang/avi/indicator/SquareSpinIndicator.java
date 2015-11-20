@@ -26,5 +26,6 @@ public class SquareSpinIndicator extends BaseIndicatorController {
         animator.setRepeatCount(-1);
         animator.setDuration(2500);
         animator.start();
+        addAnimation(animator);
     }
 }

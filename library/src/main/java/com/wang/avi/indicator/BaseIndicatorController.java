@@ -2,14 +2,23 @@ package com.wang.avi.indicator;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.View;
+
+import com.nineoldandroids.animation.Animator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jack on 2015/10/15.
  */
 public abstract class BaseIndicatorController {
 
+
     private View mTarget;
+
+    private List<Animator> mAnimators;
 
 
     public void setTarget(View target){
@@ -46,6 +55,64 @@ public abstract class BaseIndicatorController {
      * ,and add to your indicator.
      */
     public abstract void createAnimation();
+
+    /**
+     * should be called when you create animation.
+     * To make animation release better.
+     * @see #setAnimationStatus(AnimStatus)
+     * @param animator
+     */
+    public void addAnimation(Animator... animator){
+        if (mAnimators==null){
+            mAnimators=new ArrayList<>();
+        }
+        int length=animator.length;
+        for (int i = 0; i < length; i++) {
+            mAnimators.add(animator[i]);
+        }
+    }
+
+
+    /**
+     * make animation to start or end when target
+     * view was be Visible or Gone or Invisible.
+     * make animation to cancel when target view
+     * be onDetachedFromWindow.
+     * @param animStatus
+     */
+    public void setAnimationStatus(AnimStatus animStatus){
+        if (mAnimators==null){
+            return;
+        }
+        Log.d("AnimStatus","setAnimationStatus");
+        int count=mAnimators.size();
+        for (int i = 0; i < count; i++) {
+            Animator animator=mAnimators.get(i);
+            switch (animStatus){
+                case START:
+                    if (!animator.isRunning()){
+                        animator.start();
+                    }
+                    break;
+                case END:
+                    if (animator.isRunning()){
+                        animator.end();
+                    }
+                    break;
+                case CANCEL:
+                    if (animator.isRunning()){
+                        animator.cancel();
+                    }
+                    break;
+            }
+        }
+    }
+
+
+    public enum AnimStatus{
+        START,END,CANCEL
+    }
+
 
 
 }

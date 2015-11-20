@@ -50,6 +50,7 @@ public class BallScaleIndicator extends BaseIndicatorController {
             }
         });
         alphaAnim.start();
+        addAnimation(scaleAnim,alphaAnim);
     }
 
 

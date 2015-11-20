@@ -51,6 +51,8 @@ public class BallScaleRippleMultipleIndicator extends BallScaleMultipleIndicator
             });
             scaleAnim.setStartDelay(delays[i]);
             alphaAnim.start();
+
+            addAnimation(scaleAnim,alphaAnim);
         }
     }
 

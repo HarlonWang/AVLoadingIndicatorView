@@ -315,6 +315,25 @@ public class AVLoadingIndicatorView extends View{
         }
     }
 
+    @Override
+    public void setVisibility(int v) {
+        if (getVisibility() != v) {
+            super.setVisibility(v);
+            if (v == GONE || v == INVISIBLE) {
+                mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.END);
+            } else {
+                mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.START);
+            }
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.CANCEL);
+    }
+
+
     void drawIndicator(Canvas canvas){
         mIndicatorController.draw(canvas,mPaint);
     }

@@ -89,6 +89,7 @@ public class BallGridPulseIndicator extends BaseIndicatorController{
                 }
             });
             alphaAnim.start();
+            addAnimation(scaleAnim,alphaAnim);
         }
     }
 

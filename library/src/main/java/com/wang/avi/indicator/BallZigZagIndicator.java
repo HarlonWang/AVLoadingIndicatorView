@@ -62,6 +62,7 @@ public class BallZigZagIndicator extends BaseIndicatorController {
                 }
             });
             translateYAnim.start();
+            addAnimation(translateXAnim,translateYAnim);
         }
     }
 

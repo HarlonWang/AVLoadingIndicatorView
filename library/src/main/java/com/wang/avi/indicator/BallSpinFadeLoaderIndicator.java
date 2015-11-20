@@ -92,6 +92,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
                 }
             });
             alphaAnim.start();
+            addAnimation(scaleAnim,alphaAnim);
         }
     }
 

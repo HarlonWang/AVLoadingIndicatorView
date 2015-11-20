@@ -61,6 +61,7 @@ public class BallGridBeatIndicator extends BaseIndicatorController {
                 }
             });
             alphaAnim.start();
+            addAnimation(alphaAnim);
         }
     }
 
