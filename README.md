@@ -11,7 +11,7 @@ You can also find IOS version of this [here](https://github.com/ninjaprox/NVActi
 ## Demo
 ![](https://github.com/81813780/AVLoadingIndicatorView/blob/master/Demo2.gif)
 
-[Download Apk](https://github.com/81813780/AVLoadingIndicatorView/releases/download/getSampleApk/app-debug.apk)
+[Download Apk](https://github.com/81813780/AVLoadingIndicatorView/releases/download/1.0.1/app-debug.apk)
 
 ## Usage
 
@@ -20,7 +20,7 @@ You can also find IOS version of this [here](https://github.com/ninjaprox/NVActi
 Add dependencies in build.gradle.
 ```groovy
     dependencies {
-       compile 'com.wang.avi:library:1.0.0'
+       compile 'com.wang.avi:library:1.0.1'
        compile 'com.nineoldandroids:library:2.4.0'
     }
 ```

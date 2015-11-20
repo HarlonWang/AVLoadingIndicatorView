@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -26,7 +26,7 @@ dependencies {
 
 ext {
     PUBLISH_GROUP_ID = 'com.wang.avi'
-    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_VERSION = '1.0.1'
     PUBLISH_DES = 'Nice loading animations for Android'
     LIB_NAME = 'AVLoadingIndicatorView'
 
