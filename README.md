@@ -31,8 +31,8 @@ Add the AVLoadingIndicatorView to your layout:
 ```java
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avloadingIndicatorView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"  //or your custom size
+        android:layout_height="wrap_content"  //or your custom size
         android:visibility="visible"  //visible or gone
         app:indicator="BallPulse"
         app:indicator_color="your color"
