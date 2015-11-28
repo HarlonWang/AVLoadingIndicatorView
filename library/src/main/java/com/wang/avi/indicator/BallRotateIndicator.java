@@ -1,11 +1,10 @@
 package com.wang.avi.indicator;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.ValueAnimator;
 
 import java.util.ArrayList;
 import java.util.List;

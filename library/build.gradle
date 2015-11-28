@@ -1,14 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 22
+        minSdkVersion 14
+        targetSdkVersion 23
         versionCode 2
-        versionName "1.0.1"
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -20,19 +20,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
 }
 
-ext {
-    PUBLISH_GROUP_ID = 'com.wang.avi'
-    PUBLISH_VERSION = '1.0.1'
-    PUBLISH_DES = 'Nice loading animations for Android'
-    LIB_NAME = 'AVLoadingIndicatorView'
-
-    WEBSITE_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
-    ISSUE_TRACKER_URL = 'https://github.com/81813780/AVLoadingIndicatorView/issues'
-    VSC_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
-}
-
-apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
