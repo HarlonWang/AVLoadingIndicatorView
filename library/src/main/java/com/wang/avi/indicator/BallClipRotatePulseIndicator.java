@@ -1,11 +1,10 @@
 package com.wang.avi.indicator;
 
+import android.animation.Animator;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.ValueAnimator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +49,7 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
 
     @Override
     public List<Animator> createAnimation() {
-        ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.3f,1);
+        ValueAnimator scaleAnim= ValueAnimator.ofFloat(1, 0.3f, 1);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
         scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
