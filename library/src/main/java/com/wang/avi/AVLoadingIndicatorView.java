@@ -181,12 +181,31 @@ public class AVLoadingIndicatorView extends View{
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.AVLoadingIndicatorView);
         mIndicatorId=a.getInt(R.styleable.AVLoadingIndicatorView_indicator, BallPulse);
         mIndicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicator_color, Color.WHITE);
+        String customIndicator = a.getString(R.styleable.AVLoadingIndicatorView_customIndicator);
         a.recycle();
         mPaint=new Paint();
         mPaint.setColor(mIndicatorColor);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setAntiAlias(true);
-        applyIndicator();
+
+        // prefer use custom class name
+        if (customIndicator != null) {
+            try {
+                Class clz = Class.forName(customIndicator);
+                //By convention, this subclass implementation class must provide an non-param constructor.
+                Object indicator = clz.newInstance();
+                if (indicator instanceof BaseIndicatorController) {
+                    mIndicatorController = (BaseIndicatorController) indicator;
+                    mIndicatorController.setTarget(this);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        // try to use indicator property as fallback
+        if (mIndicatorController == null) {
+            applyIndicator();
+        }
     }
 
     private void applyIndicator(){
