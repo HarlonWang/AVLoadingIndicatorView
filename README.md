@@ -25,7 +25,7 @@ Add dependencies in build.gradle.
     }
 ```
 
-### Step 2
+### Step 2 - Using Built-in indicator type
 
 Add the AVLoadingIndicatorView to your layout:
 ```java
@@ -38,6 +38,29 @@ Add the AVLoadingIndicatorView to your layout:
         app:indicator_color="your color"
         />
 ```
+
+### Step 2* - Using custom indicator class
+first, provides a non-param constructor in your own subclass:
+```java
+   package com.example;
+   public class MyIndicator extends BaseIndicatorController{
+      public void MyIndicator(){
+        //...
+      }
+      //...
+   }
+```
+Then put its full class name on XML:
+```XML
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avloadingIndicatorView"
+        android:layout_width="wrap_content"  //or your custom size
+        android:layout_height="wrap_content"  //or your custom size
+        android:visibility="visible"  //visible or gone
+        app:customIndicator="com.example.MyIndicator"
+        />
+```
+**NOTE: If you use proguard, please remember to keep your indicator class.**
 
 ### Step 3
 
