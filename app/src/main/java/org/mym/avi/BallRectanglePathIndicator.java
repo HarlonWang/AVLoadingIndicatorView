@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.nineoldandroids.animation.Animator;
@@ -25,6 +26,10 @@ public class BallRectanglePathIndicator extends BaseIndicatorController {
             Color.parseColor("#1E4C59"),
             Color.parseColor("#FC5853"),
     };
+
+//    public BallRectanglePathIndicator(AttributeSet attrs){
+//
+//    }
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
