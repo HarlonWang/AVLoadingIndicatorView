@@ -9,5 +9,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         app:customIndicator="org.mym.avi.BallRectanglePathIndicator"
+        app:colorScheme1="@color/material_green"
+        app:colorScheme2="@color/material_red"
+        app:colorScheme3="@color/material_red"
+        app:colorScheme4="@color/material_green"
         />
 </RelativeLayout>

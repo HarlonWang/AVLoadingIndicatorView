@@ -10,6 +10,7 @@ import android.os.Build;
 import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.View;
+
 import com.wang.avi.indicator.BallBeatIndicator;
 import com.wang.avi.indicator.BallClipRotateIndicator;
 import com.wang.avi.indicator.BallClipRotateMultipleIndicator;
@@ -195,21 +196,25 @@ public class AVLoadingIndicatorView extends View{
             try {
                 Class<?> clz = Class.forName(customIndicator);
                 //By convention, this subclass implementation class must provide either a non-param
-                // constructor or a constructor with AttributeSet parameter.
-                Object indicator;
-                try {
-                    Constructor<?> constructor = clz.getDeclaredConstructor(AttributeSet.class);
-                    //For private constructors, do not call; hack a exception
-                    if (Modifier.isPrivate(constructor.getModifiers())){
-                        throw new NoSuchMethodException("Shouldn't call private constructor!");
+                // constructor or a constructor with (Context,AttributeSet) parameter.
+                Object indicator = null;
+                if (getContext() != null && attrs != null) {
+                    try {
+                        Constructor<?> constructor = clz.getDeclaredConstructor(Context.class, AttributeSet.class);
+                        //For private constructors, do not call; use default constructor
+                        if (!Modifier.isPrivate(constructor.getModifiers())) {
+                            //For protected or package modifier, we need to call setAccessible
+                            constructor.setAccessible(true);
+                            indicator = constructor.newInstance(getContext(), attrs);
+                        }
                     }
-                    //For protected or package modifier, we need to call setAccessible
-                    constructor.setAccessible(true);
-                    indicator = constructor.newInstance(attrs);
+                    //For those do not contains AttributeSet parameter, Class#getDeclaredConstructor
+                    // would throw this exception, and we should use default constructor.
+                    catch (NoSuchMethodException e) {
+                        //expected, do nothing
+                    }
                 }
-                //For those do not contains AttributeSet parameter, Class#getDeclaredConstructor
-                // would throw this exception, and we should use default constructor.
-                catch (NoSuchMethodException e){
+                if (indicator == null) {
                     indicator = clz.newInstance();
                 }
                 //cast to BaseIndicator class
