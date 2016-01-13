@@ -40,7 +40,7 @@ Add the AVLoadingIndicatorView to your layout:
 ```
 
 ### Step 2* - Using custom indicator class
-first, provides a non-param constructor in your own subclass:
+First, provides a non-param constructor in your own subclass:  
 ```java
    package com.example;
    public class MyIndicator extends BaseIndicatorController{
@@ -50,7 +50,7 @@ first, provides a non-param constructor in your own subclass:
       //...
    }
 ```
-Then put its full class name on XML:
+Then put its full class name on XML:  
 ```XML
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avloadingIndicatorView"
@@ -77,16 +77,18 @@ It's very simple use just like Progressbar.
 ```
 
 ### Advanced customize
-If your custom indicator has some property need to be specified in XML, you can do as following:
-First, put all your customize property into a styleable:
+If your custom indicator has some property need to be specified in XML, you can do as following:  
+First, put all your customize properties into a styleable:  
 ```XML
    <declare-styleable name="MyCustomIndicator">
        <attr name="colorScheme1" format="color" />
        <!-- more properties... -->
    </declare-styleable>
 ```
-and provides a **non-private constructor** in your indicator controller:
+
+And provides a **non-private constructor** in your indicator controller:  
 ```java
+    package com.example;
     public class MyCustomIndicator extends BaseIndicatorController {
         public MyCustomIndicator(Context context, AttributeSet attr){
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyCustomIndicator);
@@ -95,7 +97,8 @@ and provides a **non-private constructor** in your indicator controller:
         }
     }
 ```
-Then just use it as convention！
+
+Then just use it as convention！  
 ```XML
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avloadingIndicatorView"
@@ -106,7 +109,8 @@ Then just use it as convention！
         app:colorScheme1="@color/material_green"
         />
 ```
-So easy~ here is a demo:
+
+So easy~ here is a demo:  
 ![](https://github.com/Muyangmin/AVLoadingIndicatorView/blob/master/DemoCustom.gif)
 
 For more detail usage, please see sample codes.
