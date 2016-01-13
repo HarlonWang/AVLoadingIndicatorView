@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="material_green">#03B29E</color>
+    <color name="material_yellow">#FFB364</color>
+    <color name="material_black">#1E4C59</color>
+    <color name="material_red">#FC5853</color>
+</resources>

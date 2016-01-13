@@ -10,6 +10,7 @@ import android.os.Build;
 import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.View;
+
 import com.wang.avi.indicator.BallBeatIndicator;
 import com.wang.avi.indicator.BallClipRotateIndicator;
 import com.wang.avi.indicator.BallClipRotateMultipleIndicator;
@@ -40,6 +41,8 @@ import com.wang.avi.indicator.SemiCircleSpinIndicator;
 import com.wang.avi.indicator.SquareSpinIndicator;
 import com.wang.avi.indicator.TriangleSkewSpinIndicator;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 
 /**
  * Created by Jack on 2015/10/15
@@ -191,9 +194,30 @@ public class AVLoadingIndicatorView extends View{
         // prefer use custom class name
         if (customIndicator != null) {
             try {
-                Class clz = Class.forName(customIndicator);
-                //By convention, this subclass implementation class must provide an non-param constructor.
-                Object indicator = clz.newInstance();
+                Class<?> clz = Class.forName(customIndicator);
+                //By convention, this subclass implementation class must provide either a non-param
+                // constructor or a constructor with (Context,AttributeSet) parameter.
+                Object indicator = null;
+                if (getContext() != null && attrs != null) {
+                    try {
+                        Constructor<?> constructor = clz.getDeclaredConstructor(Context.class, AttributeSet.class);
+                        //For private constructors, do not call; use default constructor
+                        if (!Modifier.isPrivate(constructor.getModifiers())) {
+                            //For protected or package modifier, we need to call setAccessible
+                            constructor.setAccessible(true);
+                            indicator = constructor.newInstance(getContext(), attrs);
+                        }
+                    }
+                    //For those do not contains AttributeSet parameter, Class#getDeclaredConstructor
+                    // would throw this exception, and we should use default constructor.
+                    catch (NoSuchMethodException e) {
+                        //expected, do nothing
+                    }
+                }
+                if (indicator == null) {
+                    indicator = clz.newInstance();
+                }
+                //cast to BaseIndicator class
                 if (indicator instanceof BaseIndicatorController) {
                     mIndicatorController = (BaseIndicatorController) indicator;
                     mIndicatorController.setTarget(this);

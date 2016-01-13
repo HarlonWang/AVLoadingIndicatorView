@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BallRectanglePathIndicator">
+        <attr name="colorScheme1" format="color" />
+        <attr name="colorScheme2" format="color" />
+        <attr name="colorScheme3" format="color" />
+        <attr name="colorScheme4" format="color" />
+    </declare-styleable>
+</resources>

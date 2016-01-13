@@ -1,13 +1,17 @@
 package org.mym.avi;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.nineoldandroids.animation.Animator;
 import com.wang.avi.indicator.BaseIndicatorController;
+import com.wang.avi.sample.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +23,29 @@ public class BallRectanglePathIndicator extends BaseIndicatorController {
 
     private float[] translateX = new float[4],
             translateY = new float[4];
-    private int[] colorSchemes = new int[]{
-            Color.parseColor("#03B29E"),
-            Color.parseColor("#FFB364"),
-            Color.parseColor("#1E4C59"),
-            Color.parseColor("#FC5853"),
-    };
+    private int[] colorSchemes;
+
+    @SuppressWarnings("unused")
+    public BallRectanglePathIndicator() {
+        colorSchemes = new int[]{
+                Color.parseColor("#03B29E"),
+                Color.parseColor("#FFB364"),
+                Color.parseColor("#1E4C59"),
+                Color.parseColor("#FC5853"),
+        };
+    }
+
+    @SuppressWarnings("unused")
+    public BallRectanglePathIndicator(Context context, AttributeSet attrs){
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BallRectanglePathIndicator);
+        colorSchemes = new int[]{
+                a.getColor(R.styleable.BallRectanglePathIndicator_colorScheme1, -1),
+                a.getColor(R.styleable.BallRectanglePathIndicator_colorScheme2, -1),
+                a.getColor(R.styleable.BallRectanglePathIndicator_colorScheme3, -1),
+                a.getColor(R.styleable.BallRectanglePathIndicator_colorScheme4, -1),
+        };
+        a.recycle();
+    }
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
