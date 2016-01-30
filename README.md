@@ -20,7 +20,7 @@ You can also find IOS version of this [here](https://github.com/ninjaprox/NVActi
 Add dependencies in build.gradle.
 ```groovy
     dependencies {
-       compile 'com.wang.avi:library:1.0.1'
+       compile 'com.wang.avi:library:1.0.2'
        compile 'com.nineoldandroids:library:2.4.0'
     }
 ```
