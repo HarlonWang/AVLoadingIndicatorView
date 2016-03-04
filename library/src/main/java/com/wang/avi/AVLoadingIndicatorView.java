@@ -328,11 +328,18 @@ public class AVLoadingIndicatorView extends View{
     }
 
     @Override
+	protected void onAttachedToWindow() {
+		super.onAttachedToWindow();
+		if (mHasAnimation) {
+			mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.START);
+		}
+	}
+	
+    @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.CANCEL);
     }
-
 
     void drawIndicator(Canvas canvas){
         mIndicatorController.draw(canvas,mPaint);
@@ -345,6 +352,4 @@ public class AVLoadingIndicatorView extends View{
     private int dp2px(int dpValue) {
         return (int) getContext().getResources().getDisplayMetrics().density * dpValue;
     }
-
-
 }
