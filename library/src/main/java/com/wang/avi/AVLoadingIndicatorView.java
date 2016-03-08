@@ -328,13 +328,13 @@ public class AVLoadingIndicatorView extends View{
     }
 
     @Override
-	protected void onAttachedToWindow() {
-		super.onAttachedToWindow();
-		if (mHasAnimation) {
-			mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.START);
-		}
-	}
-	
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (mHasAnimation) {
+            mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.START);
+        }
+    }
+
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
