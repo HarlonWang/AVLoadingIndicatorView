@@ -1,7 +1,3 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.wang.avi">
-
-    <application >
-    </application>
-
 </manifest>
