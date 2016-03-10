@@ -33,6 +33,8 @@
             <flag name="SemiCircleSpin" value="27"/>
         </attr>
         <attr name="indicator_color" format="color"/>
+        <attr name="ball_pulse_circle_number" format="integer"/>
+        <attr name="ball_pulse_circle_space" format="dimension"/>
     </declare-styleable>
 
 </resources>

@@ -99,6 +99,24 @@ As seen above in the **Demo**, the indicators are as follows:
  * `BallGridBeat`
  * `SemiCircleSpin`
 
+## BallPulseIndicator customization
+```java
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avloadingIndicatorView"
+        android:layout_width="wrap_content"  //or your custom size
+        android:layout_height="wrap_content"  //or your custom size
+        android:visibility="visible"  //visible or gone
+        app:indicator="BallPulse"
+        app:indicator_color="your color"
+        app:ball_pulse_circle_number="8" // circle number of BallPulseIndicator
+        app:ball_pulse_circle_space="8dp" // space between two circles of BallPulseIndicator
+        />
+```
+
+Screenshot:
+
+![ball_pulse_customization.gif](ball_pulse_customization.gif)
+
 ## Thanks
 - [nineoldandroids](https://github.com/JakeWharton/NineOldAndroids)
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
