@@ -32,6 +32,7 @@
             <flag name="BallGridBeat" value="26"/>
             <flag name="SemiCircleSpin" value="27"/>
         </attr>
+        <attr name="customIndicator" format="string" />
         <attr name="indicator_color" format="color"/>
     </declare-styleable>
 

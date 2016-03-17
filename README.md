@@ -25,7 +25,7 @@ Add dependencies in build.gradle.
     }
 ```
 
-### Step 2
+### Step 2 - Using Built-in indicator type
 
 Add the AVLoadingIndicatorView to your layout:
 ```java
@@ -38,6 +38,29 @@ Add the AVLoadingIndicatorView to your layout:
         app:indicator_color="your color"
         />
 ```
+
+### Step 2* - Using custom indicator class
+First, provides a non-param constructor in your own subclass:  
+```java
+   package com.example;
+   public class MyIndicator extends BaseIndicatorController{
+      public void MyIndicator(){
+        //...
+      }
+      //...
+   }
+```
+Then put its full class name on XML:  
+```XML
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avloadingIndicatorView"
+        android:layout_width="wrap_content"  //or your custom size
+        android:layout_height="wrap_content"  //or your custom size
+        android:visibility="visible"  //visible or gone
+        app:customIndicator="com.example.MyIndicator"
+        />
+```
+**NOTE: If you use proguard, please remember to keep your indicator class.**
 
 ### Step 3
 
@@ -52,6 +75,45 @@ It's very simple use just like Progressbar.
    }
    
 ```
+
+### Advanced customize
+If your custom indicator has some property need to be specified in XML, you can do as following:  
+First, put all your customize properties into a styleable:  
+```XML
+   <declare-styleable name="MyCustomIndicator">
+       <attr name="colorScheme1" format="color" />
+       <!-- more properties... -->
+   </declare-styleable>
+```
+
+And provides a **non-private constructor** in your indicator controller:  
+```java
+    package com.example;
+    public class MyCustomIndicator extends BaseIndicatorController {
+        public MyCustomIndicator(Context context, AttributeSet attr){
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MyCustomIndicator);
+            int color = a.getColor(R.styleable.MyCustomIndicator_colorScheme1, -1);
+            a.recycle();
+        }
+    }
+```
+
+Then just use it as convention！  
+```XML
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avloadingIndicatorView"
+        android:layout_width="wrap_content"  //or your custom size
+        android:layout_height="wrap_content"  //or your custom size
+        android:visibility="visible"  //visible or gone
+        app:customIndicator="com.example.MyCustomIndicator"
+        app:colorScheme1="@color/material_green"
+        />
+```
+
+So easy~ here is a demo:  
+![](https://github.com/Muyangmin/AVLoadingIndicatorView/blob/master/DemoCustom.gif)
+
+For more detail usage, please see sample codes.
 
 ## Indicators
 
