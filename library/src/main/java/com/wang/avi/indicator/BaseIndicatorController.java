@@ -2,12 +2,11 @@ package com.wang.avi.indicator;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.View;
 
 import com.nineoldandroids.animation.Animator;
 
-import java.util.ArrayList;
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -16,30 +15,32 @@ import java.util.List;
 public abstract class BaseIndicatorController {
 
 
-    private View mTarget;
+    private WeakReference<View> mTarget;
 
     private List<Animator> mAnimators;
 
 
     public void setTarget(View target){
-        this.mTarget=target;
+        this.mTarget=new WeakReference<>(target);
     }
 
     public View getTarget(){
-        return mTarget;
+        return mTarget!=null?mTarget.get():null;
     }
 
 
     public int getWidth(){
-        return mTarget.getWidth();
+        return getTarget()!=null?getTarget().getWidth():0;
     }
 
     public int getHeight(){
-        return mTarget.getHeight();
+        return getTarget()!=null?getTarget().getHeight():0;
     }
 
     public void postInvalidate(){
-        mTarget.postInvalidate();
+        if (getTarget()!=null){
+            getTarget().postInvalidate();
+        }
     }
 
     /**
