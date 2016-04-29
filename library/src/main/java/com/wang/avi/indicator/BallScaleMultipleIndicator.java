@@ -15,26 +15,26 @@ import java.util.List;
  */
 public class BallScaleMultipleIndicator extends BaseIndicatorController {
 
-    float[] scaleFloats=new float[]{1,1,1};
-    int[] alphaInts=new int[]{255,255,255};
+    float[] scaleFloats = new float[]{1, 1, 1};
+    int[] alphaInts = new int[]{255, 255, 255};
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        float circleSpacing=4;
+        float circleSpacing = 4;
         for (int i = 0; i < 3; i++) {
             paint.setAlpha(alphaInts[i]);
-            canvas.scale(scaleFloats[i],scaleFloats[i],getWidth()/2,getHeight()/2);
-            canvas.drawCircle(getWidth()/2,getHeight()/2,getWidth()/2-circleSpacing,paint);
+            canvas.scale(scaleFloats[i], scaleFloats[i], getWidth() / 2, getHeight() / 2);
+            canvas.drawCircle(getWidth() / 2, getHeight() / 2, getWidth() / 2 - circleSpacing, paint);
         }
     }
 
     @Override
     public List<Animator> createAnimation() {
-        List<Animator> animators=new ArrayList<>();
-        long[] delays=new long[]{0, 200, 400};
+        List<Animator> animators = new ArrayList<>();
+        long[] delays = new long[]{0, 200, 400};
         for (int i = 0; i < 3; i++) {
-            final int index=i;
-            ValueAnimator scaleAnim=ValueAnimator.ofFloat(0,1);
+            final int index = i;
+            ValueAnimator scaleAnim = ValueAnimator.ofFloat(0, 1);
             scaleAnim.setInterpolator(new LinearInterpolator());
             scaleAnim.setDuration(1000);
             scaleAnim.setRepeatCount(-1);
@@ -48,7 +48,7 @@ public class BallScaleMultipleIndicator extends BaseIndicatorController {
             scaleAnim.setStartDelay(delays[i]);
             scaleAnim.start();
 
-            ValueAnimator alphaAnim=ValueAnimator.ofInt(255,0);
+            ValueAnimator alphaAnim = ValueAnimator.ofInt(255, 0);
             alphaAnim.setInterpolator(new LinearInterpolator());
             alphaAnim.setDuration(1000);
             alphaAnim.setRepeatCount(-1);

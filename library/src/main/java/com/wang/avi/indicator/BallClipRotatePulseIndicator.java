@@ -15,14 +15,14 @@ import java.util.List;
  */
 public class BallClipRotatePulseIndicator extends BaseIndicatorController {
 
-    float scaleFloat1,scaleFloat2,degrees;
+    float scaleFloat1, scaleFloat2, degrees;
 
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        float circleSpacing=12;
-        float x=getWidth()/2;
-        float y=getHeight()/2;
+        float circleSpacing = 12;
+        float x = getWidth() / 2;
+        float y = getHeight() / 2;
 
         //draw fill circle
         canvas.save();
@@ -41,16 +41,16 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
         paint.setStyle(Paint.Style.STROKE);
 
         //draw two arc
-        float[] startAngles=new float[]{225,45};
+        float[] startAngles = new float[]{225, 45};
         for (int i = 0; i < 2; i++) {
-            RectF rectF=new RectF(-x+circleSpacing,-y+circleSpacing,x-circleSpacing,y-circleSpacing);
+            RectF rectF = new RectF(-x + circleSpacing, -y + circleSpacing, x - circleSpacing, y - circleSpacing);
             canvas.drawArc(rectF, startAngles[i], 90, false, paint);
         }
     }
 
     @Override
     public List<Animator> createAnimation() {
-        ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.3f,1);
+        ValueAnimator scaleAnim = ValueAnimator.ofFloat(1, 0.3f, 1);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
         scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -62,7 +62,7 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
         });
         scaleAnim.start();
 
-        ValueAnimator scaleAnim2=ValueAnimator.ofFloat(1,0.6f,1);
+        ValueAnimator scaleAnim2 = ValueAnimator.ofFloat(1, 0.6f, 1);
         scaleAnim2.setDuration(1000);
         scaleAnim2.setRepeatCount(-1);
         scaleAnim2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -74,7 +74,7 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
         });
         scaleAnim2.start();
 
-        ValueAnimator rotateAnim=ValueAnimator.ofFloat(0, 180,360);
+        ValueAnimator rotateAnim = ValueAnimator.ofFloat(0, 180, 360);
         rotateAnim.setDuration(1000);
         rotateAnim.setRepeatCount(-1);
         rotateAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -85,7 +85,7 @@ public class BallClipRotatePulseIndicator extends BaseIndicatorController {
             }
         });
         rotateAnim.start();
-        List<Animator> animators=new ArrayList<>();
+        List<Animator> animators = new ArrayList<>();
         animators.add(scaleAnim);
         animators.add(scaleAnim2);
         animators.add(rotateAnim);

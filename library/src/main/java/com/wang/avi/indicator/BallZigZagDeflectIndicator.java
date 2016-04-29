@@ -15,22 +15,20 @@ import java.util.List;
 public class BallZigZagDeflectIndicator extends BallZigZagIndicator {
 
 
-
-
     @Override
     public List<Animator> createAnimation() {
-        List<Animator> animators=new ArrayList<>();
-        float startX=getWidth()/6;
-        float startY=getWidth()/6;
+        List<Animator> animators = new ArrayList<>();
+        float startX = getWidth() / 6;
+        float startY = getWidth() / 6;
         for (int i = 0; i < 2; i++) {
-            final int index=i;
-            ValueAnimator translateXAnim=ValueAnimator.ofFloat(startX,getWidth()-startX,startX,getWidth()-startX,startX);
-            if (i==1){
-                translateXAnim=ValueAnimator.ofFloat(getWidth()-startX,startX,getWidth()-startX,startX,getWidth()-startX);
+            final int index = i;
+            ValueAnimator translateXAnim = ValueAnimator.ofFloat(startX, getWidth() - startX, startX, getWidth() - startX, startX);
+            if (i == 1) {
+                translateXAnim = ValueAnimator.ofFloat(getWidth() - startX, startX, getWidth() - startX, startX, getWidth() - startX);
             }
-            ValueAnimator translateYAnim=ValueAnimator.ofFloat(startY,startY,getHeight()-startY,getHeight()-startY,startY);
-            if (i==1){
-                translateYAnim=ValueAnimator.ofFloat(getHeight()-startY,getHeight()-startY,startY,startY,getHeight()-startY);
+            ValueAnimator translateYAnim = ValueAnimator.ofFloat(startY, startY, getHeight() - startY, getHeight() - startY, startY);
+            if (i == 1) {
+                translateYAnim = ValueAnimator.ofFloat(getHeight() - startY, getHeight() - startY, startY, startY, getHeight() - startY);
             }
 
             translateXAnim.setDuration(2000);
@@ -39,7 +37,7 @@ public class BallZigZagDeflectIndicator extends BallZigZagIndicator {
             translateXAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
-                    translateX [index]= (float) animation.getAnimatedValue();
+                    translateX[index] = (float) animation.getAnimatedValue();
                     postInvalidate();
                 }
             });
@@ -51,7 +49,7 @@ public class BallZigZagDeflectIndicator extends BallZigZagIndicator {
             translateYAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
-                    translateY [index]= (float) animation.getAnimatedValue();
+                    translateY[index] = (float) animation.getAnimatedValue();
                     postInvalidate();
                 }
             });

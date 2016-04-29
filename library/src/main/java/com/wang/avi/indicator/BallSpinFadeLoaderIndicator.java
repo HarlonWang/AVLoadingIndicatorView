@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
 
-    public static final float SCALE=1.0f;
+    public static final float SCALE = 1.0f;
 
-    public static final int ALPHA=255;
+    public static final int ALPHA = 255;
 
-    float[] scaleFloats=new float[]{SCALE,
+    float[] scaleFloats = new float[]{SCALE,
             SCALE,
             SCALE,
             SCALE,
@@ -27,7 +27,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
             SCALE,
             SCALE};
 
-    int[] alphas=new int[]{ALPHA,
+    int[] alphas = new int[]{ALPHA,
             ALPHA,
             ALPHA,
             ALPHA,
@@ -39,40 +39,41 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        float radius=getWidth()/10;
+        float radius = getWidth() / 10;
         for (int i = 0; i < 8; i++) {
             canvas.save();
-            Point point=circleAt(getWidth(),getHeight(),getWidth()/2-radius,i*(Math.PI/4));
-            canvas.translate(point.x,point.y);
-            canvas.scale(scaleFloats[i],scaleFloats[i]);
+            Point point = circleAt(getWidth(), getHeight(), getWidth() / 2 - radius, i * (Math.PI / 4));
+            canvas.translate(point.x, point.y);
+            canvas.scale(scaleFloats[i], scaleFloats[i]);
             paint.setAlpha(alphas[i]);
-            canvas.drawCircle(0,0,radius,paint);
+            canvas.drawCircle(0, 0, radius, paint);
             canvas.restore();
         }
     }
 
     /**
      * 圆O的圆心为(a,b),半径为R,点A与到X轴的为角α.
-     *则点A的坐标为(a+R*cosα,b+R*sinα)
+     * 则点A的坐标为(a+R*cosα,b+R*sinα)
+     *
      * @param width
      * @param height
      * @param radius
      * @param angle
      * @return
      */
-    Point circleAt(int width,int height,float radius,double angle){
-        float x= (float) (width/2+radius*(Math.cos(angle)));
-        float y= (float) (height/2+radius*(Math.sin(angle)));
-        return new Point(x,y);
+    Point circleAt(int width, int height, float radius, double angle) {
+        float x = (float) (width / 2 + radius * (Math.cos(angle)));
+        float y = (float) (height / 2 + radius * (Math.sin(angle)));
+        return new Point(x, y);
     }
 
     @Override
     public List<Animator> createAnimation() {
-        List<Animator> animators=new ArrayList<>();
-        int[] delays= {0, 120, 240, 360, 480, 600, 720, 780, 840};
+        List<Animator> animators = new ArrayList<>();
+        int[] delays = {0, 120, 240, 360, 480, 600, 720, 780, 840};
         for (int i = 0; i < 8; i++) {
-            final int index=i;
-            ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.4f,1);
+            final int index = i;
+            ValueAnimator scaleAnim = ValueAnimator.ofFloat(1, 0.4f, 1);
             scaleAnim.setDuration(1000);
             scaleAnim.setRepeatCount(-1);
             scaleAnim.setStartDelay(delays[i]);
@@ -85,7 +86,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
             });
             scaleAnim.start();
 
-            ValueAnimator alphaAnim=ValueAnimator.ofInt(255, 77, 255);
+            ValueAnimator alphaAnim = ValueAnimator.ofInt(255, 77, 255);
             alphaAnim.setDuration(1000);
             alphaAnim.setRepeatCount(-1);
             alphaAnim.setStartDelay(delays[i]);
@@ -103,13 +104,13 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
         return animators;
     }
 
-    final class Point{
+    final class Point {
         public float x;
         public float y;
 
-        public Point(float x, float y){
-            this.x=x;
-            this.y=y;
+        public Point(float x, float y) {
+            this.x = x;
+            this.y = y;
         }
     }
 
