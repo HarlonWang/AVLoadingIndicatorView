@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class BallZigZagIndicator extends BaseIndicatorController {
 
-    float[] translateX=new float[2],translateY=new float[2];
+    float[] translateX = new float[2], translateY = new float[2];
 
 
     @Override
@@ -30,18 +30,18 @@ public class BallZigZagIndicator extends BaseIndicatorController {
 
     @Override
     public List<Animator> createAnimation() {
-        List<Animator> animators=new ArrayList<>();
-        float startX=getWidth()/6;
-        float startY=getWidth()/6;
+        List<Animator> animators = new ArrayList<>();
+        float startX = getWidth() / 6;
+        float startY = getWidth() / 6;
         for (int i = 0; i < 2; i++) {
-            final int index=i;
-            ValueAnimator translateXAnim=ValueAnimator.ofFloat(startX,getWidth()-startX,getWidth()/2,startX);
-            if (i==1){
-                translateXAnim=ValueAnimator.ofFloat(getWidth()-startX,startX,getWidth()/2,getWidth()-startX);
+            final int index = i;
+            ValueAnimator translateXAnim = ValueAnimator.ofFloat(startX, getWidth() - startX, getWidth() / 2, startX);
+            if (i == 1) {
+                translateXAnim = ValueAnimator.ofFloat(getWidth() - startX, startX, getWidth() / 2, getWidth() - startX);
             }
-            ValueAnimator translateYAnim=ValueAnimator.ofFloat(startY,startY,getHeight()/2,startY);
-            if (i==1){
-                translateYAnim=ValueAnimator.ofFloat(getHeight()-startY,getHeight()-startY,getHeight()/2,getHeight()-startY);
+            ValueAnimator translateYAnim = ValueAnimator.ofFloat(startY, startY, getHeight() / 2, startY);
+            if (i == 1) {
+                translateYAnim = ValueAnimator.ofFloat(getHeight() - startY, getHeight() - startY, getHeight() / 2, getHeight() - startY);
             }
 
             translateXAnim.setDuration(1000);

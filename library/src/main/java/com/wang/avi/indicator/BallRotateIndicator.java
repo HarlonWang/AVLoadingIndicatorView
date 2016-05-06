@@ -13,16 +13,16 @@ import java.util.List;
 /**
  * Created by Jack on 2015/10/17.
  */
-public class BallRotateIndicator extends BaseIndicatorController{
+public class BallRotateIndicator extends BaseIndicatorController {
 
-    float scaleFloat=0.5f;
+    float scaleFloat = 0.5f;
 
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        float radius=getWidth()/10;
-        float x = getWidth()/ 2;
-        float y=getHeight()/2;
+        float radius = getWidth() / 10;
+        float x = getWidth() / 2;
+        float y = getHeight() / 2;
 
         canvas.save();
         canvas.translate(x - radius * 2 - radius, y);
@@ -39,14 +39,14 @@ public class BallRotateIndicator extends BaseIndicatorController{
         canvas.save();
         canvas.translate(x + radius * 2 + radius, y);
         canvas.scale(scaleFloat, scaleFloat);
-        canvas.drawCircle(0,0,radius, paint);
+        canvas.drawCircle(0, 0, radius, paint);
         canvas.restore();
     }
 
     @Override
     public List<Animator> createAnimation() {
-        List<Animator> animators=new ArrayList<>();
-        ValueAnimator scaleAnim=ValueAnimator.ofFloat(0.5f,1,0.5f);
+        List<Animator> animators = new ArrayList<>();
+        ValueAnimator scaleAnim = ValueAnimator.ofFloat(0.5f, 1, 0.5f);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
         scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -58,7 +58,7 @@ public class BallRotateIndicator extends BaseIndicatorController{
         });
         scaleAnim.start();
 
-        ObjectAnimator rotateAnim=ObjectAnimator.ofFloat(getTarget(),"rotation",0,180,360);
+        ObjectAnimator rotateAnim = ObjectAnimator.ofFloat(getTarget(), "rotation", 0, 180, 360);
         rotateAnim.setDuration(1000);
         rotateAnim.setRepeatCount(-1);
         rotateAnim.start();
