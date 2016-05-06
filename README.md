@@ -53,6 +53,8 @@ It's very simple use just like Progressbar.
    
 ```
 
+If you want use this with Dialog , Here are mine [com.wang.avi.sample.MainActivity](https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MainActivity.java).
+
 ## Indicators
 
 As seen above in the **Demo**, the indicators are as follows:
