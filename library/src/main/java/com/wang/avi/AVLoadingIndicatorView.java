@@ -189,11 +189,31 @@ public class AVLoadingIndicatorView extends View{
         applyIndicator();
     }
 
+    public void setColor(int color) {
+        mPaint.setColor(color);
+        invalidate();
+    }
+
+    public void setIndicator(BaseIndicatorController indicator)
+    {
+        if (mIndicatorController == indicator) {
+            return;
+        }
+        if (mIndicatorController != null) {
+            mIndicatorController.setAnimationStatus(BaseIndicatorController.AnimStatus.END);
+        }
+        indicator.setTarget(this);
+        mIndicatorController = indicator;
+        if (mHasAnimation) {
+            applyAnimation();
+        }
+        mPaint.setColor(mPaint.getColor());
+        mPaint.setStyle(Paint.Style.FILL);
+        invalidate();
+    }
+
     private void applyIndicator(){
         switch (mIndicatorId){
-            case BallPulse:
-                mIndicatorController=new BallPulseIndicator();
-                break;
             case BallGridPulse:
                 mIndicatorController=new BallGridPulseIndicator();
                 break;
@@ -275,6 +295,10 @@ public class AVLoadingIndicatorView extends View{
             case SemiCircleSpin:
                 mIndicatorController=new SemiCircleSpinIndicator();
                 break;
+            case BallPulse:
+            default:
+                mIndicatorController=new BallPulseIndicator();
+                break;
         }
         mIndicatorController.setTarget(this);
     }
@@ -287,7 +311,7 @@ public class AVLoadingIndicatorView extends View{
     }
 
     private int measureDimension(int defaultSize,int measureSpec){
-        int result = defaultSize;
+        int result;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
         if (specMode == MeasureSpec.EXACTLY) {
