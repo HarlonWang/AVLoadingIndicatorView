@@ -3,7 +3,7 @@
 AVLoadingIndicatorView
 ===================
 
-**Now AVLoadingIndicatorView was updated version to 2.0 , If you have any question or suggestion  with this library , welcome to tell me !**
+> **Now AVLoadingIndicatorView was updated version to 2.0 , If you have any question or suggestion  with this library , welcome to tell me !**
 
 如果你对实现各种酷炫的动画效果感兴趣 , 欢迎一起交流 :)
 
