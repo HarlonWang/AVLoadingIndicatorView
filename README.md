@@ -62,7 +62,7 @@ It's very simple use just like Progressbar.
 
 ## Custom Indicator
 
-See [MyCustomIndicator]()
+See [MyCustomIndicator](https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MyCustomIndicator.java) in Sample .
 
 ## Indicators
 
@@ -110,8 +110,8 @@ As seen above in the **Demo**, the indicators are as follows:
  * `BallGridBeat`
  * `SemiCircleSpin`
  
- **Row 8**
-  * `com.wang.avi.sample.MyCustomIndicator`
+**Row 8**
+ * `com.wang.avi.sample.MyCustomIndicator`
 
 ## Thanks
 - [nineoldandroids](https://github.com/JakeWharton/NineOldAndroids)
