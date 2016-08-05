@@ -80,46 +80,46 @@ See [MyCustomIndicator](https://github.com/81813780/AVLoadingIndicatorView/blob/
 As seen above in the **Demo**, the indicators are as follows:
 
 **Row 1**
- * `BallPulse`
- * `BallGridPulse`
- * `BallClipRotate`
- * `BallClipRotatePulse`
+ * `BallPulseIndicator`
+ * `BallGridPulseIndicator`
+ * `BallClipRotateIndicator`
+ * `BallClipRotatePulseIndicator`
 
 **Row 2**
- * `SquareSpin`
- * `BallClipRotateMultiple`
- * `BallPulseRise`
- * `BallRotate`
+ * `SquareSpinIndicator`
+ * `BallClipRotateMultipleIndicator`
+ * `BallPulseRiseIndicator`
+ * `BallRotateIndicator`
 
 **Row 3**
- * `CubeTransition`
- * `BallZigZag`
- * `BallZigZagDeflect`
- * `BallTrianglePath`
+ * `CubeTransitionIndicator`
+ * `BallZigZagIndicator`
+ * `BallZigZagDeflectIndicator`
+ * `BallTrianglePathIndicator`
 
 **Row 4**
- * `BallScale`
- * `LineScale`
- * `LineScaleParty`
- * `BallScaleMultiple`
+ * `BallScaleIndicator`
+ * `LineScaleIndicator`
+ * `LineScalePartyIndicator`
+ * `BallScaleMultipleIndicator`
 
 **Row 5**
- * `BallPulseSync`
- * `BallBeat`
- * `LineScalePulseOut`
- * `LineScalePulseOutRapid`
+ * `BallPulseSyncIndicator`
+ * `BallBeatIndicator`
+ * `LineScalePulseOutIndicator`
+ * `LineScalePulseOutRapidIndicator`
 
 **Row 6**
- * `BallScaleRipple`
- * `BallScaleRippleMultiple`
- * `BallSpinFadeLoader`
- * `LineSpinFadeLoader`
+ * `BallScaleRippleIndicator`
+ * `BallScaleRippleMultipleIndicator`
+ * `BallSpinFadeLoaderIndicator`
+ * `LineSpinFadeLoaderIndicator`
 
 **Row 7**
- * `TriangleSkewSpin`
- * `Pacman`
- * `BallGridBeat`
- * `SemiCircleSpin`
+ * `TriangleSkewSpinIndicator`
+ * `PacmanIndicator`
+ * `BallGridBeatIndicator`
+ * `SemiCircleSpinIndicator`
  
 **Row 8**
  * `com.wang.avi.sample.MyCustomIndicator`
