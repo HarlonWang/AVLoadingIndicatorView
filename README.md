@@ -34,6 +34,19 @@ Add dependencies in build.gradle.
 ### Step 2
 
 Add the AVLoadingIndicatorView to your layout:
+
+Simple 
+
+```java
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"
+        app:indicatorName="BallPulseIndicator"
+        />
+```
+
+Advance
+
 ```java
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avi"
