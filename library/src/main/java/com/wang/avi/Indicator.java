@@ -106,13 +106,12 @@ public abstract class Indicator extends Drawable implements Animatable {
     }
 
     private void stopAnimators() {
-        if (mAnimators==null){
-            return;
-        }
-        for (ValueAnimator animator : mAnimators) {
-            if (animator != null && animator.isStarted()) {
-                animator.removeAllUpdateListeners();
-                animator.end();
+        if (mAnimators!=null){
+            for (ValueAnimator animator : mAnimators) {
+                if (animator != null && animator.isStarted()) {
+                    animator.removeAllUpdateListeners();
+                    animator.end();
+                }
             }
         }
     }
