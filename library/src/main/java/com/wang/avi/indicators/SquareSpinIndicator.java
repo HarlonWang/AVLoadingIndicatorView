@@ -53,7 +53,7 @@ public class SquareSpinIndicator extends Indicator {
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         ValueAnimator animator=ValueAnimator.ofFloat(0,180,180,0,0);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(animator,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 rotateX= (float) animation.getAnimatedValue();
@@ -65,7 +65,7 @@ public class SquareSpinIndicator extends Indicator {
         animator.setDuration(2500);
 
         ValueAnimator animator1=ValueAnimator.ofFloat(0,0,180,180,0);
-        animator1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(animator1,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 rotateY= (float) animation.getAnimatedValue();

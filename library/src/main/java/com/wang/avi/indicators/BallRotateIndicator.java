@@ -65,7 +65,7 @@ public class BallRotateIndicator extends Indicator {
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(0.5f,1,0.5f);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
-        scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 scaleFloat = (float) animation.getAnimatedValue();
@@ -74,7 +74,7 @@ public class BallRotateIndicator extends Indicator {
         });
 
         ValueAnimator rotateAnim=ValueAnimator.ofFloat(0,180,360);
-        rotateAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(rotateAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 degress = (float) animation.getAnimatedValue();

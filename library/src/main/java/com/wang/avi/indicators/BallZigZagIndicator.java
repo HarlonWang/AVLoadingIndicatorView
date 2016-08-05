@@ -46,7 +46,7 @@ public class BallZigZagIndicator extends Indicator {
             translateXAnim.setDuration(1000);
             translateXAnim.setInterpolator(new LinearInterpolator());
             translateXAnim.setRepeatCount(-1);
-            translateXAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            addUpdateListener(translateXAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     translateX[index] = (float) animation.getAnimatedValue();
@@ -57,7 +57,7 @@ public class BallZigZagIndicator extends Indicator {
             translateYAnim.setDuration(1000);
             translateYAnim.setInterpolator(new LinearInterpolator());
             translateYAnim.setRepeatCount(-1);
-            translateYAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            addUpdateListener(translateYAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     translateY[index] = (float) animation.getAnimatedValue();

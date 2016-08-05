@@ -63,7 +63,7 @@ public class CubeTransitionIndicator extends Indicator {
             translationYAnim.setDuration(1600);
             translationYAnim.setInterpolator(new LinearInterpolator());
             translationYAnim.setRepeatCount(-1);
-            translationYAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            addUpdateListener(translationYAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     translateY[index] = (float) animation.getAnimatedValue();
@@ -79,7 +79,7 @@ public class CubeTransitionIndicator extends Indicator {
         scaleAnim.setDuration(1600);
         scaleAnim.setInterpolator(new LinearInterpolator());
         scaleAnim.setRepeatCount(-1);
-        scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 scaleFloat = (float) animation.getAnimatedValue();
@@ -91,7 +91,7 @@ public class CubeTransitionIndicator extends Indicator {
         rotateAnim.setDuration(1600);
         rotateAnim.setInterpolator(new LinearInterpolator());
         rotateAnim.setRepeatCount(-1);
-        rotateAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(rotateAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 degrees = (float) animation.getAnimatedValue();

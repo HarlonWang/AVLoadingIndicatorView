@@ -51,12 +51,11 @@ public class BallPulseIndicator extends Indicator {
             scaleAnim.setRepeatCount(-1);
             scaleAnim.setStartDelay(delays[i]);
 
-            scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     scaleFloats[index] = (float) animation.getAnimatedValue();
                     postInvalidate();
-
                 }
             });
             animators.add(scaleAnim);

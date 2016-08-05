@@ -65,7 +65,7 @@ public class PacmanIndicator extends Indicator {
         translationAnim.setDuration(650);
         translationAnim.setInterpolator(new LinearInterpolator());
         translationAnim.setRepeatCount(-1);
-        translationAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(translationAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 translateX = (float) animation.getAnimatedValue();
@@ -76,7 +76,7 @@ public class PacmanIndicator extends Indicator {
         ValueAnimator alphaAnim=ValueAnimator.ofInt(255,122);
         alphaAnim.setDuration(650);
         alphaAnim.setRepeatCount(-1);
-        alphaAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 alpha = (int) animation.getAnimatedValue();
@@ -87,7 +87,7 @@ public class PacmanIndicator extends Indicator {
         ValueAnimator rotateAnim1=ValueAnimator.ofFloat(0, 45, 0);
         rotateAnim1.setDuration(650);
         rotateAnim1.setRepeatCount(-1);
-        rotateAnim1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(rotateAnim1,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 degrees1 = (float) animation.getAnimatedValue();
@@ -98,7 +98,7 @@ public class PacmanIndicator extends Indicator {
         ValueAnimator rotateAnim2=ValueAnimator.ofFloat(0,-45,0);
         rotateAnim2.setDuration(650);
         rotateAnim2.setRepeatCount(-1);
-        rotateAnim2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(rotateAnim2,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 degrees2 = (float) animation.getAnimatedValue();

@@ -30,7 +30,7 @@ public class SemiCircleSpinIndicator extends Indicator {
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         ValueAnimator rotateAnim=ValueAnimator.ofFloat(0,180,360);
-        rotateAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(rotateAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 degress= (float) animation.getAnimatedValue();

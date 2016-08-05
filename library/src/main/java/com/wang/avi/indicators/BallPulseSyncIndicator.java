@@ -41,7 +41,7 @@ public class BallPulseSyncIndicator extends Indicator {
             scaleAnim.setDuration(600);
             scaleAnim.setRepeatCount(-1);
             scaleAnim.setStartDelay(delays[i]);
-            scaleAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     translateYFloats[index] = (float) animation.getAnimatedValue();

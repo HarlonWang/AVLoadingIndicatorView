@@ -1,5 +1,6 @@
 package com.wang.avi.sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -35,8 +36,16 @@ public class SampleActivity extends AppCompatActivity{
             }
 
             @Override
-            public void onBindViewHolder(IndicatorHolder holder, int position) {
+            public void onBindViewHolder(IndicatorHolder holder, final int position) {
                 holder.indicatorView.setIndicator(INDICATORS[position]);
+                holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(SampleActivity.this,IndicatorActivity.class);
+                        intent.putExtra("indicator",INDICATORS[position]);
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override
@@ -49,9 +58,11 @@ public class SampleActivity extends AppCompatActivity{
     final static class IndicatorHolder extends RecyclerView.ViewHolder{
 
         public AVLoadingIndicatorView indicatorView;
+        public View itemLayout;
 
         public IndicatorHolder(View itemView) {
             super(itemView);
+            itemLayout= itemView.findViewById(R.id.itemLayout);
             indicatorView= (AVLoadingIndicatorView) itemView.findViewById(R.id.indicator);
         }
     }

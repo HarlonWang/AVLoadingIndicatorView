@@ -12,12 +12,15 @@ import android.graphics.drawable.Drawable;
 import com.nineoldandroids.animation.ValueAnimator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Jack Wang on 2016/8/5.
  */
 
 public abstract class Indicator extends Drawable implements Animatable {
+
+    private HashMap<ValueAnimator,ValueAnimator.AnimatorUpdateListener> mUpdateListeners=new HashMap<>();
 
     private ArrayList<ValueAnimator> mAnimators;
     private int alpha = 255;
@@ -88,7 +91,16 @@ public abstract class Indicator extends Drawable implements Animatable {
     }
 
     private void startAnimators() {
-        for (ValueAnimator animator : mAnimators) {
+        for (int i = 0; i < mAnimators.size(); i++) {
+            ValueAnimator animator = mAnimators.get(i);
+
+            //when the animator restart , add the updateListener again because they
+            // was removed by animator stop .
+            ValueAnimator.AnimatorUpdateListener updateListener=mUpdateListeners.get(animator);
+            if (updateListener!=null){
+                animator.addUpdateListener(updateListener);
+            }
+
             animator.start();
         }
     }
@@ -109,7 +121,6 @@ public abstract class Indicator extends Drawable implements Animatable {
         }
     }
 
-
     @Override
     public void stop() {
         stopAnimators();
@@ -128,6 +139,16 @@ public abstract class Indicator extends Drawable implements Animatable {
             return animator.isRunning();
         }
         return false;
+    }
+
+    /**
+     *  Your should use this to add AnimatorUpdateListener when
+     *  create animator , otherwise , animator doesn't work when
+     *  the animation restart .
+     * @param updateListener
+     */
+    public void addUpdateListener(ValueAnimator animator, ValueAnimator.AnimatorUpdateListener updateListener){
+        mUpdateListeners.put(animator,updateListener);
     }
 
     @Override
