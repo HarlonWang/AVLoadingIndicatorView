@@ -30,7 +30,7 @@ Add dependencies in build.gradle.
 Add the AVLoadingIndicatorView to your layout:
 ```java
     <com.wang.avi.AVLoadingIndicatorView
-        android:id="@+id/avloadingIndicatorView"
+        android:id="@+id/avi"
         android:layout_width="wrap_content"  //or your custom size
         android:layout_height="wrap_content"  //or your custom size
         android:visibility="visible"  //visible or gone

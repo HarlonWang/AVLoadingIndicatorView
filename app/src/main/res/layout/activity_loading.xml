@@ -6,16 +6,6 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimary"
-        app:title="AVLoadingIndicatorView"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,7 +35,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallPulse"
+                        app:indicatorName="BallPulseIndicator"
                         />
 
                 </LinearLayout>
@@ -59,7 +49,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallGridPulse"
+                        app:indicatorName="BallGridPulseIndicator"
                         />
                 </LinearLayout>
 
@@ -73,7 +63,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallClipRotate"
+                        app:indicatorName="BallClipRotateIndicator"
                         />
 
                 </LinearLayout>
@@ -87,72 +77,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallClipRotatePulse"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="SquareSpin"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallClipRotateMultiple"
-                        />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallPulseRise"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallRotate"
+                        app:indicatorName="BallClipRotatePulseIndicator"
                         />
 
                 </LinearLayout>
@@ -174,7 +99,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="CubeTransition"
+                        app:indicatorName="SquareSpinIndicator"
                         />
 
                 </LinearLayout>
@@ -188,7 +113,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallZigZag"
+                        app:indicatorName="BallClipRotateMultipleIndicator"
                         />
 
                 </LinearLayout>
@@ -203,7 +128,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallZigZagDeflect"
+                        app:indicatorName="BallPulseRiseIndicator"
                         />
 
                 </LinearLayout>
@@ -217,71 +142,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallTrianglePath"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallScale"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="LineScale"
-                        />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="LineScaleParty"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallScaleMultiple"
+                        app:indicatorName="BallRotateIndicator"
                         />
 
                 </LinearLayout>
@@ -303,7 +164,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallPulseSync"
+                        app:indicatorName="CubeTransitionIndicator"
                         />
 
                 </LinearLayout>
@@ -317,8 +178,9 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallBeat"
+                        app:indicatorName="BallZigZagIndicator"
                         />
+
                 </LinearLayout>
 
 
@@ -331,43 +193,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="LineScalePulseOut"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="LineScalePulseOutRapid"
-                        />
-
-                </LinearLayout>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallScaleRipple"
+                        app:indicatorName="BallZigZagDeflectIndicator"
                         />
 
                 </LinearLayout>
@@ -381,35 +207,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallScaleRippleMultiple"
-                        />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="BallSpinFadeLoader"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <com.wang.avi.AVLoadingIndicatorView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:indicator="LineSpinFadeLoader"
+                        app:indicatorName="BallTrianglePathIndicator"
                         />
 
                 </LinearLayout>
@@ -431,7 +229,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="TriangleSkewSpin"
+                        app:indicatorName="BallScaleIndicator"
                         />
 
                 </LinearLayout>
@@ -445,7 +243,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="Pacman"
+                        app:indicatorName="LineScaleIndicator"
                         />
                 </LinearLayout>
 
@@ -459,7 +257,7 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="BallGridBeat"
+                        app:indicatorName="LineScalePartyIndicator"
                         />
 
                 </LinearLayout>
@@ -473,7 +271,199 @@
                     <com.wang.avi.AVLoadingIndicatorView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:indicator="SemiCircleSpin"
+                        app:indicatorName="BallScaleMultipleIndicator"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="BallPulseSyncIndicator"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="BallBeatIndicator"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="LineScalePulseOutIndicator"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="LineScalePulseOutRapidIndicator"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="BallScaleRippleIndicator"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="BallScaleRippleMultipleIndicator"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="BallSpinFadeLoaderIndicator"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="LineSpinFadeLoaderIndicator"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="TriangleSkewSpinIndicator"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="PacmanIndicator"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="BallGridBeatIndicator"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <com.wang.avi.AVLoadingIndicatorView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:indicatorName="SemiCircleSpinIndicator"
                         />
 
                 </LinearLayout>

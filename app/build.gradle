@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.wang.avi.sample"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 23
         versionCode 2
         versionName "1.0.1"
