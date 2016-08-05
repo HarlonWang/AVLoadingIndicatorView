@@ -3,6 +3,12 @@
 AVLoadingIndicatorView
 ===================
 
+**Now AVLoadingIndicatorView was updated version to 2.0 , If you have any question or suggestion  with this library , welcome to tell me !**
+
+如果你对实现各种酷炫的动画效果感兴趣 , 欢迎一起交流 :)
+
+**Android动画开源交流QQ群 : 199750106**
+
 ## Introduction
 AVLoadingIndicatorView is a collection of nice loading animations for Android.
 
@@ -20,7 +26,7 @@ You can also find iOS version of this [here](https://github.com/ninjaprox/NVActi
 Add dependencies in build.gradle.
 ```groovy
     dependencies {
-       compile 'com.wang.avi:library:1.0.5'
+       compile 'com.wang.avi:library:2.0.0'
        compile 'com.nineoldandroids:library:2.4.0'
     }
 ```
@@ -33,9 +39,10 @@ Add the AVLoadingIndicatorView to your layout:
         android:id="@+id/avi"
         android:layout_width="wrap_content"  //or your custom size
         android:layout_height="wrap_content"  //or your custom size
+        style="@style/AVLoadingIndicatorView"// or AVLoadingIndicatorView.Large or AVLoadingIndicatorView.Small
         android:visibility="visible"  //visible or gone
-        app:indicator="BallPulse"
-        app:indicator_color="your color"
+        app:indicatorName="BallPulseIndicator"//Indicator Name
+        app:indicatorColor="your color"
         />
 ```
 
@@ -52,8 +59,6 @@ It's very simple use just like Progressbar.
    }
    
 ```
-
-If you want use this with Dialog , Here are mine [com.wang.avi.sample.MainActivity](https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MainActivity.java).
 
 ## Indicators
 
@@ -114,6 +119,7 @@ As seen above in the **Demo**, the indicators are as follows:
 
 [Weibo](http://weibo.com/601265161)
 
+[My Blog](http://hlong.xyz)
 
 
 
