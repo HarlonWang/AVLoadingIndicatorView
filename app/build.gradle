@@ -8,8 +8,8 @@ android {
         applicationId "com.wang.avi.sample"
         minSdkVersion 11
         targetSdkVersion 23
-        versionCode 20
-        versionName "2.0.0"
+        versionCode 21
+        versionName "2.0.1"
     }
     buildTypes {
         release {
