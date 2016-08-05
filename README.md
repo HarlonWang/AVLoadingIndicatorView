@@ -17,8 +17,6 @@ You can also find iOS version of this [here](https://github.com/ninjaprox/NVActi
 ## Demo
 ![avi](screenshots/avi.gif)
 
-[Download Apk](https://github.com/81813780/AVLoadingIndicatorView/releases/download/1.0.1/app-debug.apk)
-
 ## Usage
 
 ### Step 1
