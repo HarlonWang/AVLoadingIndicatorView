@@ -29,21 +29,32 @@ public class AVLoadingIndicatorView extends View {
     private boolean mShouldStartAnimationDrawable;
 
     public AVLoadingIndicatorView(Context context) {
-        this(context, null);
+        super(context);
+        init(context, null,0,0);
     }
 
     public AVLoadingIndicatorView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
+        init(context, attrs,0,0);
     }
 
     public AVLoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, R.style.AVLoadingIndicatorView);
+        super(context, attrs, defStyleAttr);
+        init(context, attrs,defStyleAttr,R.style.AVLoadingIndicatorView);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public AVLoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init();
+        init(context,attrs,defStyleAttr,R.style.AVLoadingIndicatorView);
+    }
+
+    private void init(Context context,AttributeSet attrs,int defStyleAttr, int defStyleRes) {
+        mMinWidth = 24;
+        mMaxWidth = 48;
+        mMinHeight = 24;
+        mMaxHeight = 48;
+
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.AVLoadingIndicatorView, defStyleAttr, defStyleRes);
 
@@ -56,13 +67,6 @@ public class AVLoadingIndicatorView extends View {
         setIndicator(indicatorName);
         setIndicatorColor(indicatorColor);
         a.recycle();
-    }
-
-    private void init() {
-        mMinWidth = 24;
-        mMaxWidth = 48;
-        mMinHeight = 24;
-        mMaxHeight = 48;
     }
 
     public Indicator getIndicator() {
