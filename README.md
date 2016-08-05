@@ -15,7 +15,7 @@ AVLoadingIndicatorView is a collection of nice loading animations for Android.
 You can also find iOS version of this [here](https://github.com/ninjaprox/NVActivityIndicatorView).
 
 ## Demo
-![](https://github.com/81813780/AVLoadingIndicatorView/blob/master/Demo2.gif)
+![avi](screenshots/avi.gif)
 
 [Download Apk](https://github.com/81813780/AVLoadingIndicatorView/releases/download/1.0.1/app-debug.apk)
 
