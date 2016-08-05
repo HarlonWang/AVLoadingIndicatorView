@@ -86,7 +86,8 @@ public class SampleActivity extends AppCompatActivity{
             "TriangleSkewSpinIndicator",
             "PacmanIndicator",
             "BallGridBeatIndicator",
-            "SemiCircleSpinIndicator"
+            "SemiCircleSpinIndicator",
+            "com.wang.avi.sample.MyCustomIndicator"
     };
 
 }

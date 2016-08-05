@@ -60,6 +60,10 @@ It's very simple use just like Progressbar.
    
 ```
 
+## Custom Indicator
+
+See [MyCustomIndicator]()
+
 ## Indicators
 
 As seen above in the **Demo**, the indicators are as follows:
@@ -105,6 +109,9 @@ As seen above in the **Demo**, the indicators are as follows:
  * `Pacman`
  * `BallGridBeat`
  * `SemiCircleSpin`
+ 
+ **Row 8**
+  * `com.wang.avi.sample.MyCustomIndicator`
 
 ## Thanks
 - [nineoldandroids](https://github.com/JakeWharton/NineOldAndroids)
