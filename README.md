@@ -3,7 +3,7 @@
 AVLoadingIndicatorView
 ===================
 
-> **Now AVLoadingIndicatorView was updated version to 2.0 , If you have any question or suggestion  with this library , welcome to tell me !**
+> **Now AVLoadingIndicatorView was updated version to 2.X , If you have any question or suggestion  with this library , welcome to tell me !**
 
 ## Introduction
 AVLoadingIndicatorView is a collection of nice loading animations for Android.
