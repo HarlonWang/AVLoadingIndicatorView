@@ -9,7 +9,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -106,7 +105,7 @@ public class AVLoadingIndicatorView extends View {
         return mIndicator;
     }
 
-    public void setIndicator(@NonNull Indicator d) {
+    public void setIndicator(Indicator d) {
         if (mIndicator != d) {
             if (mIndicator != null) {
                 mIndicator.setCallback(null);
@@ -135,7 +134,7 @@ public class AVLoadingIndicatorView extends View {
      * 2. Class name with full package,like "com.my.android.indicators.SimpleIndicator".
      * @param indicatorName the class must be extend Indicator .
      */
-    public void setIndicator(@NonNull String indicatorName){
+    public void setIndicator(String indicatorName){
         if (TextUtils.isEmpty(indicatorName)){
             return;
         }

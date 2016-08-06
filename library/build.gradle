@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 23
-        versionName "2.0.3"
+        versionCode 30
+        versionName "2.1.0"
     }
     buildTypes {
         release {
@@ -20,12 +20,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.2.0'
 }
 
 ext {
     PUBLISH_GROUP_ID = 'com.wang.avi'
-    PUBLISH_VERSION = '2.0.3'
+    PUBLISH_VERSION = '2.1.0'
     PUBLISH_DES = 'Nice loading animations for Android'
     LIB_NAME = 'AVLoadingIndicatorView'
 

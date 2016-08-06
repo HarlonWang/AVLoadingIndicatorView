@@ -24,8 +24,7 @@ You can also find iOS version of this [here](https://github.com/ninjaprox/NVActi
 Add dependencies in build.gradle.
 ```groovy
     dependencies {
-       compile 'com.wang.avi:library:2.0.3'
-       compile 'com.nineoldandroids:library:2.4.0'
+       compile 'com.wang.avi:library:2.1.0'
     }
 ```
 
@@ -125,7 +124,6 @@ As seen above in the **Demo**, the indicators are as follows:
  * `com.wang.avi.sample.MyCustomIndicator`
 
 ## Thanks
-- [nineoldandroids](https://github.com/JakeWharton/NineOldAndroids)
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
 - [Connor Atherton](https://github.com/ConnorAtherton)
 
