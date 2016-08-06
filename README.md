@@ -58,7 +58,7 @@ Advance
 
 ### Step 3
 
-It's very simple use just like Progressbar.
+It's very simple use just like .
 ```java
    void startAnim(){
         avi.show();
