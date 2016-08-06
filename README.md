@@ -61,11 +61,11 @@ Advance
 It's very simple use just like Progressbar.
 ```java
    void startAnim(){
-        findViewById(R.id.avloadingIndicatorView).setVisibility(View.VISIBLE);
+        avi.show();
    }
    
    void stopAnim(){
-        findViewById(R.id.avloadingIndicatorView).setVisibility(View.GONE);
+        avi.hide();
    }
    
 ```
