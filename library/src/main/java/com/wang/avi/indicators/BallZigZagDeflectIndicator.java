@@ -2,9 +2,7 @@ package com.wang.avi.indicators;
 
 
 import android.view.animation.LinearInterpolator;
-
-import com.nineoldandroids.animation.ValueAnimator;
-
+import android.animation.ValueAnimator;
 import java.util.ArrayList;
 
 /**

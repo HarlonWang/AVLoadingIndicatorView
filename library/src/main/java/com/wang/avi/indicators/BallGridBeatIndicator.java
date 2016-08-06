@@ -3,7 +3,7 @@ package com.wang.avi.indicators;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.nineoldandroids.animation.ValueAnimator;
+import android.animation.ValueAnimator;
 import com.wang.avi.Indicator;
 
 import java.util.ArrayList;

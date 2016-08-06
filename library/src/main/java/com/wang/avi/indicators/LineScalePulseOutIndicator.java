@@ -1,7 +1,7 @@
 package com.wang.avi.indicators;
 
 
-import com.nineoldandroids.animation.ValueAnimator;
+import android.animation.ValueAnimator;
 
 import java.util.ArrayList;
 

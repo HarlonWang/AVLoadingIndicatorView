@@ -1,5 +1,6 @@
 package com.wang.avi.indicators;
 
+import android.animation.ValueAnimator;
 import android.graphics.Camera;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
@@ -7,14 +8,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.PropertyValuesHolder;
-import com.nineoldandroids.animation.ValueAnimator;
 import com.wang.avi.Indicator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Jack on 2015/10/16.

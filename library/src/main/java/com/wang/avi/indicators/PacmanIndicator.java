@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.animation.LinearInterpolator;
 
-import com.nineoldandroids.animation.ValueAnimator;
+import android.animation.ValueAnimator;
 import com.wang.avi.Indicator;
 
 import java.util.ArrayList;
