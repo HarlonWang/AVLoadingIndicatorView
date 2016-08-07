@@ -58,10 +58,12 @@ It's very simple use just like .
 ```java
    void startAnim(){
         avi.show();
+        // or avi.smoothToShow();
    }
    
    void stopAnim(){
         avi.hide();
+        // or avi.smoothToHide();
    }
    
 ```

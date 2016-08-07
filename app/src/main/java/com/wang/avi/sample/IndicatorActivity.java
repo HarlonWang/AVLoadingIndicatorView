@@ -27,9 +27,11 @@ public class IndicatorActivity extends AppCompatActivity{
 
     public void hideClick(View view) {
         avi.hide();
+        // or avi.smoothToHide();
     }
 
     public void showClick(View view) {
         avi.show();
+        // or avi.smoothToShow();
     }
 }

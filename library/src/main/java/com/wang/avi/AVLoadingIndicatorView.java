@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 
 public class AVLoadingIndicatorView extends View {
 
@@ -157,6 +158,16 @@ public class AVLoadingIndicatorView extends View {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+    }
+
+    public void smoothToShow(){
+        startAnimation(AnimationUtils.loadAnimation(getContext(),android.R.anim.fade_in));
+        setVisibility(VISIBLE);
+    }
+
+    public void smoothToHide(){
+        startAnimation(AnimationUtils.loadAnimation(getContext(),android.R.anim.fade_out));
+        setVisibility(GONE);
     }
 
     public void hide() {
