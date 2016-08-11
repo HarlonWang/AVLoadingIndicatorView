@@ -10,7 +10,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
