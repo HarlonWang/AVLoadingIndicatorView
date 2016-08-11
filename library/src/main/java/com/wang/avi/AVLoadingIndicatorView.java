@@ -1,6 +1,7 @@
 package com.wang.avi;
 
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -14,10 +15,15 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ProgressBar;
+
+import com.wang.avi.indicators.BallPulseIndicator;
 
 public class AVLoadingIndicatorView extends View {
 
     private static final String TAG="AVLoadingIndicatorView";
+
+    private static final BallPulseIndicator DEFAULT_INDICATOR=new BallPulseIndicator();
 
     private static final int MIN_SHOW_TIME = 500; // ms
     private static final int MIN_DELAY = 500; // ms
@@ -98,6 +104,9 @@ public class AVLoadingIndicatorView extends View {
         String indicatorName=a.getString(R.styleable.AVLoadingIndicatorView_indicatorName);
         int indicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicatorColor, Color.WHITE);
         setIndicator(indicatorName);
+        if (mIndicator==null){
+            setIndicator(DEFAULT_INDICATOR);
+        }
         setIndicatorColor(indicatorColor);
         a.recycle();
     }
@@ -122,6 +131,18 @@ public class AVLoadingIndicatorView extends View {
         }
     }
 
+    /**
+     * setIndicatorColor(0xFF00FF00)
+     * or
+     * setIndicatorColor(Color.BLUE)
+     * or
+     * setIndicatorColor(Color.parseColor("#FF4081"))
+     * or
+     * setIndicatorColor(0xFF00FF00)
+     * or
+     * setIndicatorColor(getResources().getColor(android.R.color.black))
+     * @param color
+     */
     public void setIndicatorColor(int color){
         mIndicator.setColor(color);
     }
