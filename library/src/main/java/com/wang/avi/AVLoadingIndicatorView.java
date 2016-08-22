@@ -72,7 +72,7 @@ public class AVLoadingIndicatorView extends View {
 
     public AVLoadingIndicatorView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context, attrs,0,0);
+        init(context, attrs,0,R.style.AVLoadingIndicatorView);
     }
 
     public AVLoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr) {
