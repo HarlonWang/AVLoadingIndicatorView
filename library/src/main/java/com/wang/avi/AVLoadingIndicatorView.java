@@ -62,6 +62,7 @@ public class AVLoadingIndicatorView extends View {
     int mMaxHeight;
 
     private Indicator mIndicator;
+    private int mIndicatorColor;
 
     private boolean mShouldStartAnimationDrawable;
 
@@ -100,12 +101,11 @@ public class AVLoadingIndicatorView extends View {
         mMinHeight = a.getDimensionPixelSize(R.styleable.AVLoadingIndicatorView_minHeight, mMinHeight);
         mMaxHeight = a.getDimensionPixelSize(R.styleable.AVLoadingIndicatorView_maxHeight, mMaxHeight);
         String indicatorName=a.getString(R.styleable.AVLoadingIndicatorView_indicatorName);
-        int indicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicatorColor, Color.WHITE);
+        mIndicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicatorColor, Color.WHITE);
         setIndicator(indicatorName);
         if (mIndicator==null){
             setIndicator(DEFAULT_INDICATOR);
         }
-        setIndicatorColor(indicatorColor);
         a.recycle();
     }
 
@@ -121,13 +121,15 @@ public class AVLoadingIndicatorView extends View {
             }
 
             mIndicator = d;
-
+            //need to set indicator color again if you didn't specified when you update the indicator .
+            setIndicatorColor(mIndicatorColor);
             if (d != null) {
                 d.setCallback(this);
             }
             postInvalidate();
         }
     }
+
 
     /**
      * setIndicatorColor(0xFF00FF00)
@@ -142,6 +144,7 @@ public class AVLoadingIndicatorView extends View {
      * @param color
      */
     public void setIndicatorColor(int color){
+        this.mIndicatorColor=color;
         mIndicator.setColor(color);
     }
 
