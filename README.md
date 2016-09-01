@@ -72,6 +72,17 @@ It's very simple use just like .
 
 See [MyCustomIndicator](https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MyCustomIndicator.java) in Sample .
 
+## Proguard
+
+When using proguard need add rules:
+
+```
+-keep class com.wang.avi.** { *; }
+-keep class com.wang.avi.indicators.** { *; }
+```
+
+Indicators is load from class names, proguard may change it (rename).
+
 ## Indicators
 
 As seen above in the **Demo**, the indicators are as follows:
