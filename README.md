@@ -136,7 +136,7 @@ As seen above in the **Demo**, the indicators are as follows:
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
 - [Connor Atherton](https://github.com/ConnorAtherton)
 
-##Contact me
+## Contact me
 
  If you have a better idea or way on this project, please let me know, thanks :)
 
