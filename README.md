@@ -146,11 +146,6 @@ As seen above in the **Demo**, the indicators are as follows:
 
 [My Blog](http://hlong.xyz)
 
-如果你对实现各种酷炫的动画效果感兴趣 , 欢迎一起交流 :)
-
-**Android动画开源交流QQ群 : 199750106**
-
-
 ### License
 ```
 Copyright 2015 jack wang
