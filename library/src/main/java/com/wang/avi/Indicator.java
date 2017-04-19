@@ -212,4 +212,13 @@ public abstract class Indicator extends Drawable implements Animatable {
     }
 
     public abstract int getDefaultDuration();
+
+    /**
+     * This is used to multiply the delays so they will be
+     * in sync with the duration values.
+     * @return the multiplier.
+     */
+    public int getMultiplier() {
+        return getDuration() / getDefaultDuration();
+    }
 }
