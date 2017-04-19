@@ -71,6 +71,9 @@ public class BallGridBeatIndicator extends Indicator {
     }
 
 
-
-
+    @Override
+    public int getDefaultDuration() {
+        // not supported
+        return 0;
+    }
 }

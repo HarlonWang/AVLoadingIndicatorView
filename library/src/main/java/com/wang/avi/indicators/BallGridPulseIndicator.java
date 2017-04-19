@@ -97,4 +97,9 @@ public class BallGridPulseIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        // not supported
+        return 0;
+    }
 }

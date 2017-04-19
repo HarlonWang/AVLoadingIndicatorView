@@ -38,7 +38,7 @@ public class BallPulseSyncIndicator extends Indicator {
         for (int i = 0; i < 3; i++) {
             final int index=i;
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(getHeight()/2,getHeight()/2-radius*2,getHeight()/2);
-            scaleAnim.setDuration(600);
+            scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
             scaleAnim.setStartDelay(delays[i]);
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -53,5 +53,8 @@ public class BallPulseSyncIndicator extends Indicator {
         return animators;
     }
 
-
+    @Override
+    public int getDefaultDuration() {
+        return 600;
+    }
 }

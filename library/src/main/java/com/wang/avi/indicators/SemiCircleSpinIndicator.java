@@ -34,10 +34,14 @@ public class SemiCircleSpinIndicator extends Indicator {
                 postInvalidate();
             }
         });
-        rotateAnim.setDuration(600);
+        rotateAnim.setDuration(getDuration());
         rotateAnim.setRepeatCount(-1);
         animators.add(rotateAnim);
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 600;
+    }
 }

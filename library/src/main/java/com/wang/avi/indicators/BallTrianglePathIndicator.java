@@ -48,7 +48,7 @@ public class BallTrianglePathIndicator extends Indicator {
                 translateYAnim=ValueAnimator.ofFloat(getHeight()-startY,startY,getHeight()-startY,getHeight()-startY);
             }
 
-            translateXAnim.setDuration(2000);
+            translateXAnim.setDuration(getDuration());
             translateXAnim.setInterpolator(new LinearInterpolator());
                 translateXAnim.setRepeatCount(-1);
             addUpdateListener(translateXAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -59,7 +59,7 @@ public class BallTrianglePathIndicator extends Indicator {
                 }
             });
 
-            translateYAnim.setDuration(2000);
+            translateYAnim.setDuration(getDuration());
             translateYAnim.setInterpolator(new LinearInterpolator());
             translateYAnim.setRepeatCount(-1);
             addUpdateListener(translateYAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -76,5 +76,8 @@ public class BallTrianglePathIndicator extends Indicator {
         return animators;
     }
 
-
+    @Override
+    public int getDefaultDuration() {
+        return 2000;
+    }
 }

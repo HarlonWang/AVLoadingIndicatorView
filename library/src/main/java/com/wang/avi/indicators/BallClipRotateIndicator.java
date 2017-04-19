@@ -35,7 +35,7 @@ public class BallClipRotateIndicator extends Indicator {
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.6f,0.5f,1);
-        scaleAnim.setDuration(750);
+        scaleAnim.setDuration(getDuration());
         scaleAnim.setRepeatCount(-1);
         addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -45,7 +45,7 @@ public class BallClipRotateIndicator extends Indicator {
             }
         });
         ValueAnimator rotateAnim=ValueAnimator.ofFloat(0,180,360);
-        rotateAnim.setDuration(750);
+        rotateAnim.setDuration(getDuration());
         rotateAnim.setRepeatCount(-1);
         addUpdateListener(rotateAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -59,4 +59,8 @@ public class BallClipRotateIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 750;
+    }
 }

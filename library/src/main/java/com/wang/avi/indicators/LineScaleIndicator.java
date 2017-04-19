@@ -43,7 +43,7 @@ public class LineScaleIndicator extends Indicator {
         for (int i = 0; i < 5; i++) {
             final int index=i;
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1, 0.4f, 1);
-            scaleAnim.setDuration(1000);
+            scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
             scaleAnim.setStartDelay(delays[i]);
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -58,4 +58,8 @@ public class LineScaleIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1000;
+    }
 }

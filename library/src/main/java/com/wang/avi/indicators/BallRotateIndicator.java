@@ -60,7 +60,7 @@ public class BallRotateIndicator extends Indicator {
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(0.5f,1,0.5f);
-        scaleAnim.setDuration(1000);
+        scaleAnim.setDuration(getDuration());
         scaleAnim.setRepeatCount(-1);
         addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -78,7 +78,7 @@ public class BallRotateIndicator extends Indicator {
                 postInvalidate();
             }
         });
-        rotateAnim.setDuration(1000);
+        rotateAnim.setDuration(getDuration());
         rotateAnim.setRepeatCount(-1);
 
         animators.add(scaleAnim);
@@ -86,4 +86,8 @@ public class BallRotateIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1000;
+    }
 }
