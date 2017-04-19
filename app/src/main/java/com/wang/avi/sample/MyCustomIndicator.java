@@ -51,7 +51,7 @@ public class MyCustomIndicator extends Indicator{
 
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.3f,1);
 
-            scaleAnim.setDuration(750);
+            scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
             scaleAnim.setStartDelay(delays[i]);
 
@@ -68,5 +68,8 @@ public class MyCustomIndicator extends Indicator{
         return animators;
     }
 
-
+    @Override
+    public int getDefaultDuration() {
+        return 750;
+    }
 }

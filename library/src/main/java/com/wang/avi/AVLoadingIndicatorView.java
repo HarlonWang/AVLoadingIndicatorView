@@ -125,7 +125,7 @@ public class AVLoadingIndicatorView extends View {
             mIndicator = d;
             //need to set indicator color again if you didn't specified when you update the indicator .
             setIndicatorColor(mIndicatorColor);
-            setAnimDuration(mAnimationDuration);
+            setAnimationDuration(mAnimationDuration);
             if (d != null) {
                 d.setCallback(this);
             }
@@ -133,7 +133,7 @@ public class AVLoadingIndicatorView extends View {
         }
     }
 
-    public void setAnimDuration(int duration) {
+    public void setAnimationDuration(int duration) {
         this.mAnimationDuration = duration;
         mIndicator.setDuration(duration);
     }
