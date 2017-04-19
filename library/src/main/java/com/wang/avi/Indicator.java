@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public abstract class Indicator extends Drawable implements Animatable {
 
-    private HashMap<ValueAnimator,ValueAnimator.AnimatorUpdateListener> mUpdateListeners=new HashMap<>();
+    private HashMap<ValueAnimator, ValueAnimator.AnimatorUpdateListener> mUpdateListeners = new HashMap<>();
 
     private ArrayList<ValueAnimator> mAnimators;
     private int alpha = 255;
@@ -27,10 +27,11 @@ public abstract class Indicator extends Drawable implements Animatable {
     protected Rect drawBounds = ZERO_BOUNDS_RECT;
 
     private boolean mHasAnimators;
+    private int mDuration;
 
-    private Paint mPaint=new Paint();
+    private Paint mPaint = new Paint();
 
-    public Indicator(){
+    public Indicator() {
         mPaint.setColor(Color.WHITE);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setAntiAlias(true);
@@ -66,7 +67,7 @@ public abstract class Indicator extends Drawable implements Animatable {
 
     @Override
     public void draw(Canvas canvas) {
-        draw(canvas,mPaint);
+        draw(canvas, mPaint);
     }
 
     public abstract void draw(Canvas canvas, Paint paint);
@@ -95,8 +96,8 @@ public abstract class Indicator extends Drawable implements Animatable {
 
             //when the animator restart , add the updateListener again because they
             // was removed by animator stop .
-            ValueAnimator.AnimatorUpdateListener updateListener=mUpdateListeners.get(animator);
-            if (updateListener!=null){
+            ValueAnimator.AnimatorUpdateListener updateListener = mUpdateListeners.get(animator);
+            if (updateListener != null) {
                 animator.addUpdateListener(updateListener);
             }
 
@@ -105,7 +106,7 @@ public abstract class Indicator extends Drawable implements Animatable {
     }
 
     private void stopAnimators() {
-        if (mAnimators!=null){
+        if (mAnimators != null) {
             for (ValueAnimator animator : mAnimators) {
                 if (animator != null && animator.isStarted()) {
                     animator.removeAllUpdateListeners();
@@ -143,13 +144,14 @@ public abstract class Indicator extends Drawable implements Animatable {
     }
 
     /**
-     *  Your should use this to add AnimatorUpdateListener when
-     *  create animator , otherwise , animator doesn't work when
-     *  the animation restart .
+     * Your should use this to add AnimatorUpdateListener when
+     * create animator , otherwise , animator doesn't work when
+     * the animation restart .
+     *
      * @param updateListener
      */
-    public void addUpdateListener(ValueAnimator animator, ValueAnimator.AnimatorUpdateListener updateListener){
-        mUpdateListeners.put(animator,updateListener);
+    public void addUpdateListener(ValueAnimator animator, ValueAnimator.AnimatorUpdateListener updateListener) {
+        mUpdateListeners.put(animator, updateListener);
     }
 
     @Override
@@ -166,7 +168,7 @@ public abstract class Indicator extends Drawable implements Animatable {
         this.drawBounds = new Rect(left, top, right, bottom);
     }
 
-    public void postInvalidate(){
+    public void postInvalidate() {
         invalidateSelf();
     }
 
@@ -174,28 +176,40 @@ public abstract class Indicator extends Drawable implements Animatable {
         return drawBounds;
     }
 
-    public int getWidth(){
+    public int getWidth() {
         return drawBounds.width();
     }
 
-    public int getHeight(){
+    public int getHeight() {
         return drawBounds.height();
     }
 
-    public int centerX(){
+    public int centerX() {
         return drawBounds.centerX();
     }
 
-    public int centerY(){
+    public int centerY() {
         return drawBounds.centerY();
     }
 
-    public float exactCenterX(){
+    public float exactCenterX() {
         return drawBounds.exactCenterX();
     }
 
-    public float exactCenterY(){
+    public float exactCenterY() {
         return drawBounds.exactCenterY();
     }
 
+    public void setDuration(int duration) {
+        this.mDuration = duration;
+    }
+
+    public int getDuration() {
+        if (mDuration<=0) {
+            return getDefaultDuration();
+        }
+        return mDuration;
+    }
+
+    public abstract int getDefaultDuration();
 }

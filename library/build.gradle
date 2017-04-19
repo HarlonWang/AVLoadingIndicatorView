@@ -33,4 +33,4 @@ ext {
     VSC_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
 }
 
-apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
+//apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'

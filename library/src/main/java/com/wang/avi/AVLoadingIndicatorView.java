@@ -19,9 +19,9 @@ import com.wang.avi.indicators.BallPulseIndicator;
 
 public class AVLoadingIndicatorView extends View {
 
-    private static final String TAG="AVLoadingIndicatorView";
+    private static final String TAG = "AVLoadingIndicatorView";
 
-    private static final BallPulseIndicator DEFAULT_INDICATOR=new BallPulseIndicator();
+    private static final BallPulseIndicator DEFAULT_INDICATOR = new BallPulseIndicator();
 
     private static final int MIN_SHOW_TIME = 500; // ms
     private static final int MIN_DELAY = 500; // ms
@@ -63,31 +63,32 @@ public class AVLoadingIndicatorView extends View {
 
     private Indicator mIndicator;
     private int mIndicatorColor;
+    private int mAnimationDuration;
 
     private boolean mShouldStartAnimationDrawable;
 
     public AVLoadingIndicatorView(Context context) {
         super(context);
-        init(context, null,0,0);
+        init(context, null, 0, 0);
     }
 
     public AVLoadingIndicatorView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context, attrs,0,R.style.AVLoadingIndicatorView);
+        init(context, attrs, 0, R.style.AVLoadingIndicatorView);
     }
 
     public AVLoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs,defStyleAttr,R.style.AVLoadingIndicatorView);
+        init(context, attrs, defStyleAttr, R.style.AVLoadingIndicatorView);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public AVLoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context,attrs,defStyleAttr,R.style.AVLoadingIndicatorView);
+        init(context, attrs, defStyleAttr, R.style.AVLoadingIndicatorView);
     }
 
-    private void init(Context context,AttributeSet attrs,int defStyleAttr, int defStyleRes) {
+    private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         mMinWidth = 24;
         mMaxWidth = 48;
         mMinHeight = 24;
@@ -100,10 +101,11 @@ public class AVLoadingIndicatorView extends View {
         mMaxWidth = a.getDimensionPixelSize(R.styleable.AVLoadingIndicatorView_maxWidth, mMaxWidth);
         mMinHeight = a.getDimensionPixelSize(R.styleable.AVLoadingIndicatorView_minHeight, mMinHeight);
         mMaxHeight = a.getDimensionPixelSize(R.styleable.AVLoadingIndicatorView_maxHeight, mMaxHeight);
-        String indicatorName=a.getString(R.styleable.AVLoadingIndicatorView_indicatorName);
-        mIndicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicatorColor, Color.WHITE);
+        String indicatorName = a.getString(R.styleable.AVLoadingIndicatorView_indicatorName);
+        mIndicatorColor = a.getColor(R.styleable.AVLoadingIndicatorView_indicatorColor, Color.WHITE);
+        mAnimationDuration = a.getInt(R.styleable.AVLoadingIndicatorView_animationDuration, 0);
         setIndicator(indicatorName);
-        if (mIndicator==null){
+        if (mIndicator == null) {
             setIndicator(DEFAULT_INDICATOR);
         }
         a.recycle();
@@ -123,11 +125,17 @@ public class AVLoadingIndicatorView extends View {
             mIndicator = d;
             //need to set indicator color again if you didn't specified when you update the indicator .
             setIndicatorColor(mIndicatorColor);
+            setAnimDuration(mAnimationDuration);
             if (d != null) {
                 d.setCallback(this);
             }
             postInvalidate();
         }
+    }
+
+    public void setAnimDuration(int duration) {
+        this.mAnimationDuration = duration;
+        mIndicator.setDuration(duration);
     }
 
 
@@ -141,10 +149,11 @@ public class AVLoadingIndicatorView extends View {
      * setIndicatorColor(0xFF00FF00)
      * or
      * setIndicatorColor(getResources().getColor(android.R.color.black))
+     *
      * @param color
      */
-    public void setIndicatorColor(int color){
-        this.mIndicatorColor=color;
+    public void setIndicatorColor(int color) {
+        this.mIndicatorColor = color;
         mIndicator.setColor(color);
     }
 
@@ -155,15 +164,16 @@ public class AVLoadingIndicatorView extends View {
      * 1. Only class Name,like "SimpleIndicator".(This way would use default package name with
      * "com.wang.avi.indicators")
      * 2. Class name with full package,like "com.my.android.indicators.SimpleIndicator".
+     *
      * @param indicatorName the class must be extend Indicator .
      */
-    public void setIndicator(String indicatorName){
-        if (TextUtils.isEmpty(indicatorName)){
+    public void setIndicator(String indicatorName) {
+        if (TextUtils.isEmpty(indicatorName)) {
             return;
         }
-        StringBuilder drawableClassName=new StringBuilder();
-        if (!indicatorName.contains(".")){
-            String defaultPackageName=getClass().getPackage().getName();
+        StringBuilder drawableClassName = new StringBuilder();
+        if (!indicatorName.contains(".")) {
+            String defaultPackageName = getClass().getPackage().getName();
             drawableClassName.append(defaultPackageName)
                     .append(".indicators")
                     .append(".");
@@ -174,7 +184,7 @@ public class AVLoadingIndicatorView extends View {
             Indicator indicator = (Indicator) drawableClass.newInstance();
             setIndicator(indicator);
         } catch (ClassNotFoundException e) {
-            Log.e(TAG,"Didn't find your class , check the name again !");
+            Log.e(TAG, "Didn't find your class , check the name again !");
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -182,13 +192,13 @@ public class AVLoadingIndicatorView extends View {
         }
     }
 
-    public void smoothToShow(){
-        startAnimation(AnimationUtils.loadAnimation(getContext(),android.R.anim.fade_in));
+    public void smoothToShow() {
+        startAnimation(AnimationUtils.loadAnimation(getContext(), android.R.anim.fade_in));
         setVisibility(VISIBLE);
     }
 
-    public void smoothToHide(){
-        startAnimation(AnimationUtils.loadAnimation(getContext(),android.R.anim.fade_out));
+    public void smoothToHide() {
+        startAnimation(AnimationUtils.loadAnimation(getContext(), android.R.anim.fade_out));
         setVisibility(GONE);
     }
 
