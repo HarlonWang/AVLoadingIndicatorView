@@ -42,12 +42,16 @@ public class LineScalePartyIndicator extends Indicator {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         long[] durations=new long[]{1260, 430, 1010, 730};
         long[] delays=new long[]{770, 290, 280, 740};
+
+        float durationsMultiplier = getDuration()/durations[0];
+        float delaysMultiplier = getDuration()/delays[0];
+
         for (int i = 0; i < 4; i++) {
             final int index=i;
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.4f,1);
-            scaleAnim.setDuration(durations[i]);
+            scaleAnim.setDuration((long) (durations[i]*durationsMultiplier));
             scaleAnim.setRepeatCount(-1);
-            scaleAnim.setStartDelay(delays[i]);
+            scaleAnim.setStartDelay((long) (delays[i]*delaysMultiplier));
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -62,7 +66,6 @@ public class LineScalePartyIndicator extends Indicator {
 
     @Override
     public int getDefaultDuration() {
-        // not supported
-        return 0;
+        return 1260;
     }
 }

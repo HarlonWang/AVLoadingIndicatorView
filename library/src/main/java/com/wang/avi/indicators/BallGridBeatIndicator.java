@@ -52,12 +52,15 @@ public class BallGridBeatIndicator extends Indicator {
         int[] durations={960, 930, 1190, 1130, 1340, 940, 1200, 820, 1190};
         int[] delays= {360, 400, 680, 410, 710, -150, -120, 10, 320};
 
+        float durationsMultiplier = getDuration()/durations[0];
+        float delaysMultiplier = getDuration()/delays[0];
+
         for (int i = 0; i < 9; i++) {
             final int index=i;
             ValueAnimator alphaAnim=ValueAnimator.ofInt(255, 168,255);
-            alphaAnim.setDuration(durations[i]);
+            alphaAnim.setDuration((long) (durations[i]*durationsMultiplier));
             alphaAnim.setRepeatCount(-1);
-            alphaAnim.setStartDelay(delays[i]);
+            alphaAnim.setStartDelay((long) (delays[i]*delaysMultiplier));
             addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -73,7 +76,6 @@ public class BallGridBeatIndicator extends Indicator {
 
     @Override
     public int getDefaultDuration() {
-        // not supported
-        return 0;
+        return 960;
     }
 }
