@@ -49,7 +49,7 @@ Advance
         android:visibility="visible"  //visible or gone
         app:indicatorName="BallPulseIndicator"//Indicator Name
         app:indicatorColor="your color"
-        app:animationDuration="desired duration" // Animation duration in millisaconds. Use this to control animation speed.
+        app:animationDuration="desired duration" // Animation duration in milliseconds. Use this to control animation speed.
         />
 ```
 
