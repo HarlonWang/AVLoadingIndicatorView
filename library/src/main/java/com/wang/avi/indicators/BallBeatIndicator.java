@@ -51,7 +51,7 @@ public class BallBeatIndicator extends Indicator {
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.75f,1);
             scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
-            scaleAnim.setStartDelay(delays[i]*getMultiplier());
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -63,7 +63,7 @@ public class BallBeatIndicator extends Indicator {
             ValueAnimator alphaAnim=ValueAnimator.ofInt(255,51,255);
             alphaAnim.setDuration(getDuration());
             alphaAnim.setRepeatCount(-1);
-            alphaAnim.setStartDelay(delays[i]*getMultiplier());
+            alphaAnim.setStartDelay((long) (delays[i]*getMultiplier()));
             addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {

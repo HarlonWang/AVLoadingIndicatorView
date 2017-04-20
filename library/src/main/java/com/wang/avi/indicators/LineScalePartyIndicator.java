@@ -36,12 +36,11 @@ public class LineScalePartyIndicator extends Indicator {
         }
     }
 
-
+    private int[] durations={1260, 430, 1010, 730};
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
-        long[] durations=new long[]{1260, 430, 1010, 730};
-        long[] delays=new long[]{770, 290, 280, 740};
+        int[] delays={770, 290, 280, 740};
 
         float durationsMultiplier = getDuration()/durations[0];
         float delaysMultiplier = getDuration()/delays[0];
@@ -66,6 +65,6 @@ public class LineScalePartyIndicator extends Indicator {
 
     @Override
     public int getDefaultDuration() {
-        return 1260;
+        return durations[0];
     }
 }

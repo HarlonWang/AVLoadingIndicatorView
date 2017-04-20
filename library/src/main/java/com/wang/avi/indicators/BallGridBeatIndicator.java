@@ -45,11 +45,11 @@ public class BallGridBeatIndicator extends Indicator {
         }
     }
 
+    private int[] durations={960, 930, 1190, 1130, 1340, 940, 1200, 820, 1190};
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
 
-        int[] durations={960, 930, 1190, 1130, 1340, 940, 1200, 820, 1190};
         int[] delays= {360, 400, 680, 410, 710, -150, -120, 10, 320};
 
         float durationsMultiplier = getDuration()/durations[0];
@@ -76,6 +76,6 @@ public class BallGridBeatIndicator extends Indicator {
 
     @Override
     public int getDefaultDuration() {
-        return 960;
+        return durations[0];
     }
 }

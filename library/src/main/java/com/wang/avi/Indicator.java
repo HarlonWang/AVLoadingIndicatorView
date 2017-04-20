@@ -218,7 +218,7 @@ public abstract class Indicator extends Drawable implements Animatable {
      * in sync with the duration values.
      * @return the multiplier.
      */
-    public int getMultiplier() {
+    public float getMultiplier() {
         return getDuration() / getDefaultDuration();
     }
 }

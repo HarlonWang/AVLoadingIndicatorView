@@ -60,10 +60,10 @@ public class BallGridPulseIndicator extends Indicator {
         }
     }
 
+    private int[] durations={720, 1020, 1280, 1420, 1450, 1180, 870, 1450, 1060};
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
-        int[] durations={720, 1020, 1280, 1420, 1450, 1180, 870, 1450, 1060};
         int[] delays= {-60, 250, -170, 480, 310, 30, 460, 780, 450};
 
         float durationsMultiplier = getDuration()/durations[0];
@@ -102,6 +102,6 @@ public class BallGridPulseIndicator extends Indicator {
 
     @Override
     public int getDefaultDuration() {
-        return 720;
+        return durations[0];
     }
 }

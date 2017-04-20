@@ -49,7 +49,7 @@ public class BallPulseIndicator extends Indicator {
 
             scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
-            scaleAnim.setStartDelay(delays[i]*getMultiplier());
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
 
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override

@@ -44,7 +44,7 @@ public class BallScaleMultipleIndicator extends Indicator {
                     postInvalidate();
                 }
             });
-            scaleAnim.setStartDelay(delays[i]*getMultiplier());
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
 
             ValueAnimator alphaAnim=ValueAnimator.ofInt(255,0);
             alphaAnim.setInterpolator(new LinearInterpolator());
@@ -57,7 +57,7 @@ public class BallScaleMultipleIndicator extends Indicator {
                     postInvalidate();
                 }
             });
-            scaleAnim.setStartDelay(delays[i]*getMultiplier());
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
 
             animators.add(scaleAnim);
             animators.add(alphaAnim);
