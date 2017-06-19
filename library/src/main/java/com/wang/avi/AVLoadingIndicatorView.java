@@ -208,6 +208,7 @@ public class AVLoadingIndicatorView extends View {
             if (!mPostedHide) {
                 postDelayed(mDelayedHide, MIN_SHOW_TIME - diff);
                 mPostedHide = true;
+                mPostedShow = false;
             }
         }
     }
@@ -220,6 +221,7 @@ public class AVLoadingIndicatorView extends View {
         if (!mPostedShow) {
             postDelayed(mDelayedShow, MIN_DELAY);
             mPostedShow = true;
+            mPostedHide = false;
         }
     }
 
