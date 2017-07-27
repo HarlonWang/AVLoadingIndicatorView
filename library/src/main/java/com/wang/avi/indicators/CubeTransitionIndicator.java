@@ -48,7 +48,7 @@ public class CubeTransitionIndicator extends Indicator {
             translationXAnim.setInterpolator(new LinearInterpolator());
             translationXAnim.setDuration(1600);
             translationXAnim.setRepeatCount(-1);
-            translationXAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            addUpdateListener(translationXAnim, new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
                     translateX[index] = (float) animation.getAnimatedValue();
