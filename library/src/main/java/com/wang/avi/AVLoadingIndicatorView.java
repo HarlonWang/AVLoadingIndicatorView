@@ -195,6 +195,7 @@ public class AVLoadingIndicatorView extends View {
     public void hide() {
         mDismissed = true;
         removeCallbacks(mDelayedShow);
+        mPostedShow = false;
         long diff = System.currentTimeMillis() - mStartTime;
         if (diff >= MIN_SHOW_TIME || mStartTime == -1) {
             // The progress spinner has been shown long enough
@@ -217,6 +218,7 @@ public class AVLoadingIndicatorView extends View {
         mStartTime = -1;
         mDismissed = false;
         removeCallbacks(mDelayedHide);
+        mPostedHide = false;
         if (!mPostedShow) {
             postDelayed(mDelayedShow, MIN_DELAY);
             mPostedShow = true;
