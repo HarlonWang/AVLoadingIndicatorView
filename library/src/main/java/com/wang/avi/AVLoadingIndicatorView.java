@@ -206,8 +206,8 @@ public class AVLoadingIndicatorView extends View {
             // so put a delayed message in to hide it when its been
             // shown long enough.
             if (!mPostedHide) {
-                postDelayed(mDelayedHide, MIN_SHOW_TIME - diff);
                 mPostedHide = true;
+                postDelayed(mDelayedHide, MIN_SHOW_TIME - diff);
             }
         }
     }
@@ -218,8 +218,8 @@ public class AVLoadingIndicatorView extends View {
         mDismissed = false;
         removeCallbacks(mDelayedHide);
         if (!mPostedShow) {
-            postDelayed(mDelayedShow, MIN_DELAY);
             mPostedShow = true;
+            postDelayed(mDelayedShow, MIN_DELAY);
         }
     }
 
