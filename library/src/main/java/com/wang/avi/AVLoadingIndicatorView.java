@@ -207,6 +207,7 @@ public class AVLoadingIndicatorView extends View {
             // shown long enough.
             if (!mPostedHide) {
                 postDelayed(mDelayedHide, MIN_SHOW_TIME - diff);
+                mPostedShow = false;
                 mPostedHide = true;
             }
         }
