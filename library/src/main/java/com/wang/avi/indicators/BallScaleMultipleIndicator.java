@@ -35,7 +35,7 @@ public class BallScaleMultipleIndicator extends Indicator {
             final int index=i;
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(0,1);
             scaleAnim.setInterpolator(new LinearInterpolator());
-            scaleAnim.setDuration(1000);
+            scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
@@ -44,11 +44,11 @@ public class BallScaleMultipleIndicator extends Indicator {
                     postInvalidate();
                 }
             });
-            scaleAnim.setStartDelay(delays[i]);
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
 
             ValueAnimator alphaAnim=ValueAnimator.ofInt(255,0);
             alphaAnim.setInterpolator(new LinearInterpolator());
-            alphaAnim.setDuration(1000);
+            alphaAnim.setDuration(getDuration());
             alphaAnim.setRepeatCount(-1);
             addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
@@ -57,7 +57,7 @@ public class BallScaleMultipleIndicator extends Indicator {
                     postInvalidate();
                 }
             });
-            scaleAnim.setStartDelay(delays[i]);
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
 
             animators.add(scaleAnim);
             animators.add(alphaAnim);
@@ -65,4 +65,8 @@ public class BallScaleMultipleIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1000;
+    }
 }

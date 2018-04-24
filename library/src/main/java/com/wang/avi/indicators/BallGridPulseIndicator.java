@@ -60,18 +60,21 @@ public class BallGridPulseIndicator extends Indicator {
         }
     }
 
+    private int[] durations={720, 1020, 1280, 1420, 1450, 1180, 870, 1450, 1060};
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
-        int[] durations={720, 1020, 1280, 1420, 1450, 1180, 870, 1450, 1060};
         int[] delays= {-60, 250, -170, 480, 310, 30, 460, 780, 450};
+
+        float durationsMultiplier = getDuration()/durations[0];
+        float delaysMultiplier = getDuration()/delays[0];
 
         for (int i = 0; i < 9; i++) {
             final int index=i;
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.5f,1);
-            scaleAnim.setDuration(durations[i]);
+            scaleAnim.setDuration((long) (durations[i]*durationsMultiplier));
             scaleAnim.setRepeatCount(-1);
-            scaleAnim.setStartDelay(delays[i]);
+            scaleAnim.setStartDelay((long) (delays[i]*delaysMultiplier));
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -81,9 +84,9 @@ public class BallGridPulseIndicator extends Indicator {
             });
 
             ValueAnimator alphaAnim=ValueAnimator.ofInt(255, 210, 122, 255);
-            alphaAnim.setDuration(durations[i]);
+            alphaAnim.setDuration((long) (durations[i]*durationsMultiplier));
             alphaAnim.setRepeatCount(-1);
-            alphaAnim.setStartDelay(delays[i]);
+            alphaAnim.setStartDelay((long) (delays[i]*delaysMultiplier));
             addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -97,4 +100,8 @@ public class BallGridPulseIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return durations[0];
+    }
 }

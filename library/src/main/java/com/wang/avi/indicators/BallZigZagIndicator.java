@@ -43,7 +43,7 @@ public class BallZigZagIndicator extends Indicator {
                 translateYAnim=ValueAnimator.ofFloat(getHeight()-startY,getHeight()-startY,getHeight()/2,getHeight()-startY);
             }
 
-            translateXAnim.setDuration(1000);
+            translateXAnim.setDuration(getDuration());
             translateXAnim.setInterpolator(new LinearInterpolator());
             translateXAnim.setRepeatCount(-1);
             addUpdateListener(translateXAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -54,7 +54,7 @@ public class BallZigZagIndicator extends Indicator {
                 }
             });
 
-            translateYAnim.setDuration(1000);
+            translateYAnim.setDuration(getDuration());
             translateYAnim.setInterpolator(new LinearInterpolator());
             translateYAnim.setRepeatCount(-1);
             addUpdateListener(translateYAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -70,4 +70,8 @@ public class BallZigZagIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1000;
+    }
 }

@@ -61,9 +61,13 @@ public class BallPulseRiseIndicator extends Indicator {
         });
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatCount(-1);
-        animator.setDuration(1500);
+        animator.setDuration(getDuration());
         animators.add(animator);
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1500;
+    }
 }

@@ -64,7 +64,7 @@ public class TriangleSkewSpinIndicator extends Indicator {
         });
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatCount(-1);
-        animator.setDuration(2500);
+        animator.setDuration(getDuration());
 
         ValueAnimator animator1=ValueAnimator.ofFloat(0,0,180,180,0);
         addUpdateListener(animator1,new ValueAnimator.AnimatorUpdateListener() {
@@ -76,11 +76,15 @@ public class TriangleSkewSpinIndicator extends Indicator {
         });
         animator1.setInterpolator(new LinearInterpolator());
         animator1.setRepeatCount(-1);
-        animator1.setDuration(2500);
+        animator1.setDuration(getDuration());
 
         animators.add(animator);
         animators.add(animator1);
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 2500;
+    }
 }

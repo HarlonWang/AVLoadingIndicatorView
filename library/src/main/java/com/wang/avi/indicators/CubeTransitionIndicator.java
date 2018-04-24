@@ -46,7 +46,7 @@ public class CubeTransitionIndicator extends Indicator {
                 translationXAnim=ValueAnimator.ofFloat(getWidth()-startX,startX,startX, getWidth()-startX,getWidth()-startX);
             }
             translationXAnim.setInterpolator(new LinearInterpolator());
-            translationXAnim.setDuration(1600);
+            translationXAnim.setDuration(getDuration());
             translationXAnim.setRepeatCount(-1);
             translationXAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
@@ -60,7 +60,7 @@ public class CubeTransitionIndicator extends Indicator {
             if (i==1){
                 translationYAnim=ValueAnimator.ofFloat(getHeight()-startY,getHeight()-startY,startY,startY,getHeight()-startY);
             }
-            translationYAnim.setDuration(1600);
+            translationYAnim.setDuration(getDuration());
             translationYAnim.setInterpolator(new LinearInterpolator());
             translationYAnim.setRepeatCount(-1);
             addUpdateListener(translationYAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -76,7 +76,7 @@ public class CubeTransitionIndicator extends Indicator {
         }
 
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.5f,1,0.5f,1);
-        scaleAnim.setDuration(1600);
+        scaleAnim.setDuration(getDuration());
         scaleAnim.setInterpolator(new LinearInterpolator());
         scaleAnim.setRepeatCount(-1);
         addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -88,7 +88,7 @@ public class CubeTransitionIndicator extends Indicator {
         });
 
         ValueAnimator rotateAnim=ValueAnimator.ofFloat(0,180,360,1.5f*360,2*360);
-        rotateAnim.setDuration(1600);
+        rotateAnim.setDuration(getDuration());
         rotateAnim.setInterpolator(new LinearInterpolator());
         rotateAnim.setRepeatCount(-1);
         addUpdateListener(rotateAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -102,5 +102,10 @@ public class CubeTransitionIndicator extends Indicator {
         animators.add(scaleAnim);
         animators.add(rotateAnim);
         return animators;
+    }
+
+    @Override
+    public int getDefaultDuration() {
+        return 1600;
     }
 }

@@ -17,9 +17,9 @@ public class LineScalePulseOutRapidIndicator extends LineScaleIndicator {
         for (int i = 0; i < 5; i++) {
             final int index=i;
             ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.4f,1);
-            scaleAnim.setDuration(1000);
+            scaleAnim.setDuration(getDuration());
             scaleAnim.setRepeatCount(-1);
-            scaleAnim.setStartDelay(delays[i]);
+            scaleAnim.setStartDelay((long) (delays[i]*getMultiplier()));
             addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
@@ -32,4 +32,8 @@ public class LineScalePulseOutRapidIndicator extends LineScaleIndicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1000;
+    }
 }

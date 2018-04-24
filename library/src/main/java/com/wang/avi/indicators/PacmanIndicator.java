@@ -62,7 +62,7 @@ public class PacmanIndicator extends Indicator {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         float startT=getWidth()/11;
         ValueAnimator translationAnim=ValueAnimator.ofFloat(getWidth()-startT,getWidth()/2);
-        translationAnim.setDuration(650);
+        translationAnim.setDuration(getDuration());
         translationAnim.setInterpolator(new LinearInterpolator());
         translationAnim.setRepeatCount(-1);
         addUpdateListener(translationAnim,new ValueAnimator.AnimatorUpdateListener() {
@@ -74,7 +74,7 @@ public class PacmanIndicator extends Indicator {
         });
 
         ValueAnimator alphaAnim=ValueAnimator.ofInt(255,122);
-        alphaAnim.setDuration(650);
+        alphaAnim.setDuration(getDuration());
         alphaAnim.setRepeatCount(-1);
         addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -85,7 +85,7 @@ public class PacmanIndicator extends Indicator {
         });
 
         ValueAnimator rotateAnim1=ValueAnimator.ofFloat(0, 45, 0);
-        rotateAnim1.setDuration(650);
+        rotateAnim1.setDuration(getDuration());
         rotateAnim1.setRepeatCount(-1);
         addUpdateListener(rotateAnim1,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -96,7 +96,7 @@ public class PacmanIndicator extends Indicator {
         });
 
         ValueAnimator rotateAnim2=ValueAnimator.ofFloat(0,-45,0);
-        rotateAnim2.setDuration(650);
+        rotateAnim2.setDuration(getDuration());
         rotateAnim2.setRepeatCount(-1);
         addUpdateListener(rotateAnim2,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -111,5 +111,10 @@ public class PacmanIndicator extends Indicator {
         animators.add(rotateAnim1);
         animators.add(rotateAnim2);
         return animators;
+    }
+
+    @Override
+    public int getDefaultDuration() {
+        return 650;
     }
 }

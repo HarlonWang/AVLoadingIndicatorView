@@ -31,7 +31,7 @@ public class BallScaleIndicator extends Indicator {
         ArrayList<ValueAnimator> animators=new ArrayList<>();
         ValueAnimator scaleAnim=ValueAnimator.ofFloat(0,1);
         scaleAnim.setInterpolator(new LinearInterpolator());
-        scaleAnim.setDuration(1000);
+        scaleAnim.setDuration(getDuration());
         scaleAnim.setRepeatCount(-1);
         addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -43,7 +43,7 @@ public class BallScaleIndicator extends Indicator {
 
         ValueAnimator alphaAnim=ValueAnimator.ofInt(255, 0);
         alphaAnim.setInterpolator(new LinearInterpolator());
-        alphaAnim.setDuration(1000);
+        alphaAnim.setDuration(getDuration());
         alphaAnim.setRepeatCount(-1);
         addUpdateListener(alphaAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -57,4 +57,8 @@ public class BallScaleIndicator extends Indicator {
         return animators;
     }
 
+    @Override
+    public int getDefaultDuration() {
+        return 1000;
+    }
 }
