@@ -1,3 +1,7 @@
+# PLEASE NOTE, THIS PROJECT IS NO LONGER BEING MAINTAINED
+
+* * *
+
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AVLoadingIndicatorView-green.svg?style=flat)](https://android-arsenal.com/details/1/2686)
 
 AVLoadingIndicatorView
@@ -20,7 +24,7 @@ You can also find iOS version of this [here](https://github.com/ninjaprox/NVActi
 Add dependencies in build.gradle.
 ```groovy
     dependencies {
-       compile 'com.wang.avi:library:2.1.2'
+       compile 'com.wang.avi:library:2.1.3'
     }
 ```
 
@@ -71,6 +75,17 @@ It's very simple use just like .
 ## Custom Indicator
 
 See [MyCustomIndicator](https://github.com/81813780/AVLoadingIndicatorView/blob/master/app/src/main/java/com/wang/avi/sample/MyCustomIndicator.java) in Sample .
+
+## Proguard
+
+When using proguard need add rules:
+
+```
+-keep class com.wang.avi.** { *; }
+-keep class com.wang.avi.indicators.** { *; }
+```
+
+Indicators is load from class names, proguard may change it (rename).
 
 ## Indicators
 
@@ -125,7 +140,7 @@ As seen above in the **Demo**, the indicators are as follows:
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
 - [Connor Atherton](https://github.com/ConnorAtherton)
 
-##Contact me
+## Contact me
 
  If you have a better idea or way on this project, please let me know, thanks :)
 
@@ -134,11 +149,6 @@ As seen above in the **Demo**, the indicators are as follows:
 [Weibo](http://weibo.com/601265161)
 
 [My Blog](http://hlong.xyz)
-
-如果你对实现各种酷炫的动画效果感兴趣 , 欢迎一起交流 :)
-
-**Android动画开源交流QQ群 : 199750106**
-
 
 ### License
 ```
