@@ -132,9 +132,6 @@ As seen above in the **Demo**, the indicators are as follows:
  * `PacmanIndicator`
  * `BallGridBeatIndicator`
  * `SemiCircleSpinIndicator`
- 
-**Row 8**
- * `com.wang.avi.sample.MyCustomIndicator`
 
 ## Thanks
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)
