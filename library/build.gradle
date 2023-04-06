@@ -1,36 +1,23 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 33
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 33
-        versionName "2.1.3"
+        targetSdkVersion 33
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    namespace 'com.wang.avi'
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
-
-ext {
-    PUBLISH_GROUP_ID = 'com.wang.avi'
-    PUBLISH_VERSION = '2.1.3'
-    PUBLISH_DES = 'Nice loading animations for Android'
-    LIB_NAME = 'AVLoadingIndicatorView'
-
-    WEBSITE_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
-    ISSUE_TRACKER_URL = 'https://github.com/81813780/AVLoadingIndicatorView/issues'
-    VSC_URL = 'https://github.com/81813780/AVLoadingIndicatorView'
-}
-
-apply from: 'https://raw.githubusercontent.com/andforce/release-android-lib-to-jcenter/master/bintray.gradle'
